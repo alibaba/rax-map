@@ -40,6 +40,7 @@
     "bisheng-plugin-antd": "0.3.2",
     "bisheng-plugin-react": "0.2.2",
     "css-loader": "^0.26.1",
+    "cz-conventional-changelog": "^2.1.0",
     "dora-plugin-proxy": "^0.8.5",
     "eslint": "^3.17.1",
     "eslint-config-elemefe": "^0.2.0",
@@ -71,5 +72,10 @@
     "rax-touchable": "^0.6.5",
     "rax-view": "^0.6.5",
     "react-amap": "^1.2.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
