@@ -8,7 +8,8 @@
     "deploy": "bisheng build && bisheng gh-pages",
     "build": "rm -rf lib && babel rax-map -d lib",
     "start": "bisheng start",
-    "dev": "webpack-dev-server --config ./webpack.config.js"
+    "dev": "webpack-dev-server --config ./webpack.config.js",
+    "cz": "git-cz"
   },
   "author": "zhu.yan@alibaba-inc.com",
   "repository": {
