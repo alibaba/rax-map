@@ -1,0 +1,176 @@
+#doc {
+  h1{
+    font-weight: 200;
+    font-size: 30px;
+  }
+  h2{
+    font-size: 25px;
+  }
+  h3{
+    font-size: 20px;
+    margin: 25px 0 8px 0;
+  }
+  h4{
+    font-size: 16px;
+    margin: 12px 0 5px 0;
+  }
+  h5{
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+  }
+  h1, h2, h3, h4, h5 {
+    a{
+      color: rgba(33, 150, 243, 0.47);
+      text-decoration: underline;
+    }
+  }
+  .anchor{
+    color: transparent;
+  }
+  .page-content{
+    margin: 15px 0;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+  }
+  thead{
+    background: #f3f3f3;
+  }
+  td, th{
+    border: 1px solid #e3e3e3;
+    text-align: left;
+    padding: 8px 10px 8px 10px;
+    min-width: 100px;
+  }
+  code{
+    background: #f9f9f9;
+    border: 1px solid #f0f0f0;
+  }
+  p{
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 28px;
+    &.amap-maptype-item { // 修复地图上控件样式被覆盖的问题
+      height: 20px;
+      line-height: 20px;
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+  p > code, td > code {
+    border: 1px solid #dedede;
+    padding: 2px 3px;
+    margin: 0 2px;
+    border-radius: 2px;
+  }
+
+  .demo-item{
+    padding: 10px;
+    width: 100%;
+    margin: 10px auto 30px auto;
+    border-radius: 8px;
+    border: 1px solid #f3f3f3;
+    background: rgba(243, 243, 243, 0.4);
+    h3{
+      margin: 0 0 5px 0;
+      font-size: 16px;
+    }
+  }
+  .demo-desc{
+    margin: 10px 0;
+    li{
+      margin: 0;
+    }
+  }
+  .demo-item-code{
+    border: 1px solid #e0e0e0;
+    height: 667px; // ryan+
+    overflow: hidden;
+    background: #fff;
+    pre{
+      margin: 0;
+      padding: 0;
+    }
+    pre code{
+      border: 0;
+      background: #fff;
+      height: 667px;
+    }
+  }
+  .demo-item-preview{
+    border: 1px solid #e0e0e0;
+    //border-left: 0;
+    height: 498px; // ryan+
+    width: 300px; // ryan+
+    margin-left: 103px; // ryan+
+    margin-top: 70px; // ryan+
+    z-index: 999;
+    button{
+      margin-right: 8px;
+      margin-top: 4px;
+    }
+  }
+  .demo-code-preview{
+    position: relative;
+    .ctrl{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      span{
+        display: inline-block;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        &:hover{
+          background: #efefef;
+        }
+      }
+    }
+  }
+}
+
+article{
+  hr{
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #e3e3e3;
+  }
+  blockquote{
+    border-left: 3px solid #aaa;
+    padding-left: 6px;
+    margin: 10px 0;
+    background: #f3faff;
+  }
+  li{
+    margin: 5px 0;
+  }
+  li > p{
+    display: inline-block;
+  }
+  ul, ol{
+    padding-left: 20px;
+  }
+  ul li{
+    list-style-type: circle;
+    list-style-position: outside;
+  }
+  ol li{
+    list-style: decimal;
+    list-style-position: outside;
+  }
+}
+/* .pure-article{
+}
+
+@media(max-width: 800px) {
+  #doc{
+    .demo-item{
+
+    }
+  }
+}
+*/

@@ -1,0 +1,59 @@
+.customMeuns {
+  padding: 0 !important;
+  a {
+    color:#488ded;
+    padding-left: 40px;
+    text-decoration: none !important;
+  }
+  &::before {
+    font-family: "anticon" !important;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    text-rendering: auto;
+    position: absolute;
+    content: "\E61D";
+    right: 16px;
+    top: 0;
+    display: inline-block;
+    font-size: 12px;
+    font-size: 8px \9;
+    -webkit-transform: scale(0.66666667) rotate(0deg);
+    -ms-transform: scale(0.66666667) rotate(0deg);
+    transform: scale(0.66666667) rotate(0deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+    zoom: 1;
+  }
+  &.up{
+    &::before {
+      -webkit-transform: scale(0.66666667) rotate(0deg);
+      -ms-transform: scale(0.66666667) rotate(0deg);
+      transform: scale(0.66666667) rotate(0deg);
+      -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+    }
+  }
+  &.down{
+    &::before {
+      -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+      -webkit-transform: rotate(180deg) scale(0.75);
+      -ms-transform: rotate(180deg) scale(0.75);
+      transform: rotate(180deg) scale(0.75);
+    }
+  }
+}
+.code-preview {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.mobile-preview {
+  width: 375px;
+  height: 667px;
+  //margin-left: 20px;
+  background: url(https://zos.alipayobjects.com/rmsportal/rayegChGabXrZJHHVkiH.png) no-repeat;
+  background-size: contain;
+  float: left;
+  margin-left: -18px;
+  margin-top: -71px;
+}
