@@ -17,7 +17,30 @@ import {
   unmountComponentAtNode
 } from 'rax';
 import View from 'rax-view';
-import styles from './index.css';
+
+const styles = {
+  checkZoom: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    background: '#fff',
+    padding: 5,
+    border: '1px solid #bababa',
+    borderRadius:5
+  },
+  checkZoomSpan: {
+    display: 'inline-block',
+    height: 20,
+    lineHeight: 20,
+    width: 190,
+    textAlign: 'left',
+    margin: '0 5px',
+    cursor: 'pointer',
+    color: '#000000',
+    fontSize: '12',
+    whiteSpace:'nowrap'
+  }
+}
 
 const CheckZoom = (props) => {
   const map = props.__map__;

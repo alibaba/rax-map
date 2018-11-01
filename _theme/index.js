@@ -8,7 +8,7 @@ module.exports = {
     //component: './template/Redirect'
     component: './template/Cover'
   }, {
-    path: '/rax-map/components/:doc',
+    path: '/api/components/:doc',
     component: './template/Components',
     // indexRoute: { component: './template/Articles' },
     childRoutes: [{
@@ -16,7 +16,7 @@ module.exports = {
       component: './template/ComponentNodes',
     }]
   }, {
-    path: '/rax-map/modules/:doc',// 这里的 doc 对应的是 rax-map/modules 库里的doc
+    path: '/api/modules/:doc',// 这里的 doc 对应的是 rax-map/modules 库里的doc
     component: './template/Components',
     childRoutes: [{
       path: ':children',// 这里的 children 对应的是 rax-map/modules/demo 库里的doc

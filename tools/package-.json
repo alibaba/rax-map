@@ -9,7 +9,7 @@
   "scripts": {
     "site": "bisheng build",
     "deploy": "bisheng build && bisheng gh-pages",
-    "build": "rm -rf lib && babel src -d lib",
+    "build": "rm -rf lib && babel rax-map -d lib",
     "start": "bisheng start",
     "dev": "webpack-dev-server --config ./webpack.config.js",
     "push-alibaba":"git push --mirror https://github.com/alibaba/rax-map.git",
@@ -48,6 +48,7 @@
     "eslint": "^3.17.1",
     "eslint-config-elemefe": "^0.2.0",
     "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.30.3",
     "eslint-plugin-react": "^6.10.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.10.0",
@@ -61,10 +62,7 @@
     "uglify-js": "^2.8.12",
     "url-loader": "^0.5.7",
     "prop-types": "^15.6.2",
-    "classnames": "^2.2.6",
-    "webpack": "^3.4.1",
-    "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-dev-server": "^2.6.1"
+    "classnames": "^2.2.6"
   },
   "dependencies": {
     "rax": "^0.6.5",

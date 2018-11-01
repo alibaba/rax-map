@@ -15,10 +15,10 @@ const componentOrder = [
 ];
 
 const url = location.pathname;
-const index = url.indexOf('/rax-map/');
+const index = url.indexOf('/api/');
 const params = url.substring(index,url.length).split('/');
 console.log('params==>',params)
-if (params[1] === 'rax-map' && (params[2] === 'components' || params[2] === 'modules')) {
+if (params[1] === 'api' && (params[2] === 'components' || params[2] === 'modules')) {
   params[3] && (whoIsOpen.level1 = params[3]);
   params[4] && (whoIsOpen.level2 = params[4]);
 }
@@ -121,7 +121,7 @@ export default function ComponentsMenu(props) {
       selectedKeys={[defaultSelectedKey]}
   >
     <Menu.Item key="index">
-      <Link to="/rax-map/components/index">基本介绍</Link>
+      <Link to="/api/components/index">基本介绍</Link>
     </Menu.Item>
     <SubMenu key={'components'} title={'组件'}>
       {getComponentsMenuGroups(data)}

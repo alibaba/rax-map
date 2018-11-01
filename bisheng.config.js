@@ -3,7 +3,7 @@ var path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  source: ['./rax-map', './articles', 'CHANGELOG.md'],
+  source: ['./api', './articles', 'CHANGELOG.md'],
   output: './_site',
   entry: {
     index: {
@@ -24,11 +24,11 @@ module.exports = {
     //   new BundleAnalyzerPlugin()
     // ],
     config.resolve.alias = {
-      'rax-map': path.join(process.cwd(), 'rax-map'),
+      'rax-map': path.join(process.cwd(), 'api'),
       //'libs': path.join(process.cwd(), 'libs'),
       'react-router': 'react-router/umd/ReactRouter'
     };
     return config;
   },
-  root: '/rax-map/'
+  root: '/api/'
 };

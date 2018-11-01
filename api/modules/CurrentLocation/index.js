@@ -18,7 +18,6 @@ import {
 import View from 'rax-view';
 import Picture from 'rax-picture';
 import isFun from "../../components/utils/isFun";
-//import styles from './index.css';
 
 const styles = {
   circleContainer: {

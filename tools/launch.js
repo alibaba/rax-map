@@ -74,7 +74,7 @@ function renameFilesInDir(dir) {
 
 delDir('libs', () => {
   console.log('===>','删除成功');
-  copyDir('rax-map', 'libs', () => {
+  copyDir('src', 'libs', () => {
     console.log('===>','拷贝成功');
     var myPath = path.resolve(__dirname + '/libs');
     changeFileContent(myPath)

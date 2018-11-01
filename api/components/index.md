@@ -9,13 +9,15 @@ RAX-MAP 目前已经包含的组件如下：
 
 | 名称 | 说明 |
 |------|------|
-| [Map](/rax-map/components/map) | 显示地图；下面的其他组件,必须作为 `Map` 的子组件使用|
-| [Marker](/rax-map/components/marker) | 在地图上显示单个坐标点 |
-| [Markers](/rax-map/components/markers) | 在地图上显示多个坐标点 |
-| [Polygon](/rax-map/components/polygon) | 在地图上显示多边形 |
-| [Polyline](/rax-map/components/polyline) |在地图上显示折线 |
-| [Circle](/rax-map/components/circle) | 在地图上显示圆形 |
-| [Tip](/rax-map/components/tip) | 在地图上显示信息窗体 |
+| [Map](/api/components/map) | 显示地图；下面的其他组件,必须作为 `Map` 的子组件使用|
+| [Marker](/api/components/marker) | 在地图上显示单个坐标点 |
+| [Markers](/api/components/markers) | 在地图上显示多个坐标点 |
+| [Polygon](/api/components/polygon) | 在地图上显示多边形 |
+| [Polyline](/api/components/polyline) |在地图上显示折线 |
+| [Circle](/api/components/circle) | 在地图上显示圆形 |
+| [Tip](/api/components/tip) | 在地图上显示信息窗体 |
+| [DetailSwiper](/api/modules/DetailSwiper) | 在地图上显示marker滑动选择组件 |
+| [CurrentLoction](/api/modules/CurrentLoction) | 在地图上显示定位当前位置组件 |
 
 ### 术语说明——**动态属性**和**静态属性**的说明
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import AMap from 'rax-map';
+import {Map} from 'rax-map';
 require('../static/playground.less');
 
-const InfoWindow = AMap.InfoWindow;
+const InfoWindow = Map.InfoWindow;
 
 export default class Playground extends React.Component {
   constructor(props) {
@@ -43,10 +43,10 @@ export default class Playground extends React.Component {
 
   render() {
     return <div id="playground">
-      <AMap events={this.amapEvents}>
+      <Map events={this.amapEvents}>
         { this.renderMyLogo() }
         { this.renderInfoWindow() }
-      </AMap>
+      </Map>
     </div>;
   }
 }
