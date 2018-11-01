@@ -24,10 +24,10 @@ export default class Playground extends React.Component {
   }
 
   renderMyLogo() {
-    return <div className="react-amap-icon">
+    return <div className="rax-map-icon">
       <a href="#">
         <i></i>
-        <p>react-amap</p>
+        <p>rax-map</p>
       </a>
     </div>;
   }

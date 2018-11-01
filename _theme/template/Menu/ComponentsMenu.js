@@ -42,11 +42,12 @@ function getComponentsMenuLink(meta, subItem, key) {
         whoIsOpen.level1 = '';
       } else {
         whoIsOpen.level1 = key;
+        whoIsOpen.level2 = '';
       }
       scope.setState({});
 
     }}>
-      <Link to={link}>{meta.title}</Link>
+      <Link to={link} title='展开有详细示例'>{meta.title}</Link>
     </div>
     <ul>{getComponentsMenuNodes(subItem, link)}</ul>
   </div>;

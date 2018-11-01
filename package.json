@@ -1,8 +1,11 @@
 {
   "name": "rax-map",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "rax-map",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "site": "bisheng build",
     "deploy": "bisheng build && bisheng gh-pages",
@@ -24,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/ryan730/rax-map/issues"
   },
-  "homepage": "https://ryan730.github.io/rax-map-doc",
+  "homepage": "https://ryan730.github.io/rax-map",
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^16.0.10",

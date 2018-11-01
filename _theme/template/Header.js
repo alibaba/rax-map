@@ -9,7 +9,7 @@ const shareIt = () => {
   if (article) {
     text = '#Rax-map# ' + article.innerText.slice(0, 140);
   }
-  const url = `http://service.weibo.com/share/share.php?url=${curPage}&appkey=3975764953&language=zh_cn&title=${window.encodeURIComponent(text)}&source=thisissourcetest&sourceUrl=https%3A%2F%2Felemefe.github.io%2Freact-amap%2F&ralateUid=oslh&message=&uids=&pic=https%3A%2F%2Fcloud.githubusercontent.com%2Fassets%2F3898898%2F23833571%2Fe5c7ae68-0782-11e7-8590-cecf4f3c969f.png&searchPic=true&content=`;
+  const url = `http://service.weibo.com/share/share.php?url=${curPage}&appkey=3975764953&language=zh_cn&title=${window.encodeURIComponent(text)}&source=thisissourcetest&sourceUrl=https://elemefe.github.io/rax-map/&ralateUid=oslh&message=&uids=&pic=https://img.alicdn.com/tfs/TB1hKleuiQnBKNjSZFmXXcApVXa-700-700.png&searchPic=true&content=`;
   window.open(url, '_blank');
 };
 
@@ -18,7 +18,7 @@ const onSearchKeyDOwn = e => {
   const keyword = target.value.trim();
   if (keyCode === 13) {
     if (keyword !== '') {
-      window.open(`https://www.google.com.hk/search?q=${encodeURIComponent(keyword)}+site%3Aelemefe.github.io%2Freact-amap&oq=$+site%3Aelemefe.github.io%2Freact-amap`);
+      window.open(`https://www.google.com.hk/search?q=${encodeURIComponent(keyword)}+site:github.com/ryan730/rax-map&oq=$+site:github.com/ryan730/rax-map`);
     }
   }
 };
@@ -35,13 +35,13 @@ export default function Header(props) {
       <i className="header-icon"/>
       <h2>RAX-MAP</h2>
       <ul>
-        <li className="searchForm">
-          <input type="text" placeholder="请输入关键词搜索（Google）" onKeyDown={onSearchKeyDOwn}/>
-        </li>
+        {/*<li className="searchForm">*/}
+          {/*<input type="text" placeholder="请输入关键词搜索（Google）" onKeyDown={onSearchKeyDOwn}/>*/}
+        {/*</li>*/}
         {/*<li><Link to="/"><Icon type="home"/><span>首页</span></Link></li>*/}
         {/*<li><Link className={path.indexOf('articles') === -1 ? '' : 'current'} to="/articles/start"><Icon type="bulb"/><span>快速开始</span></Link></li>*/}
         <li><Link className={path.indexOf('components') === -1 ? '' : 'current'} to="/rax-map/components/index"><Icon type="appstore-o"/><span>组件文档</span></Link></li>
-        <li><a href="https://github.com/ryan730/rax-map-doc/tree/daily/0.0.4" target="_blank"><Icon type="github"/><span>GitHub</span></a></li>
+        <li><a href="https://github.com/ryan730/rax-map" target="_blank"><Icon type="github"/><span>GitHub</span></a></li>
         <li>
           <a target="_blank" href="javascript:;" onClick={shareIt}>
             <Icon type="share-alt"/>

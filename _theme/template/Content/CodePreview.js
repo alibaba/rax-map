@@ -5,10 +5,10 @@ const noop = () => {};
 const copySupport = document.queryCommandSupported('copy');
 if (copySupport) {
   document.addEventListener('copy', function(e) {
-    if (window.__react_amap_code) {
+    if (window.__rax_map_code) {
       const cd = e.clipboardData;
-      cd.setData('text/plain', window.__react_amap_code);
-      delete window.__react_amap_code;
+      cd.setData('text/plain', window.__rax_map_code);
+      delete window.__rax_map_code;
       e.preventDefault();
       return false;
     }
@@ -30,7 +30,7 @@ export default class CodePreview extends React.Component {
   }
 
   copyCode() {
-    window.__react_amap_code = this.codeCon.innerText;
+    window.__rax_map_code = this.codeCon.innerText;
     document.execCommand('copy');
   }
 
