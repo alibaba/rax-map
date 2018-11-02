@@ -1,4 +1,4 @@
-<img src="https://ryan730.github.io/rax-map/10b3751062650b8fb9f16b4214dd6726.png" width="150" height="150" />
+<img src="https://github.com/alibaba/rax-map/10b3751062650b8fb9f16b4214dd6726.png" width="150" height="150" />
 
 # Rax-map
 
@@ -10,7 +10,7 @@
 - 如果你有更复杂的需求，或者觉得默认提供的组件功能不够,可以参考高德api配置,提供更丰富的开发能力;
 
 ### 线上API地址(包含demo演示)
-[地址](https://ryan730.github.io/rax-map/rax-map/components/index)
+[地址](https://github.com/alibaba/rax-map/components/index)
 
 ### 项目实践(阿里拍卖-地图找房)
 - 建议在chrome的移动端模拟模式下查看

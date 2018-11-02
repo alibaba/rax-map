@@ -19,7 +19,7 @@
   "author": "zhu.yan@alibaba-inc.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryan730/rax-map"
+    "url": "https://github.com/alibaba/rax-map.git"
   },
   "keywords": [
     "map",
@@ -27,9 +27,9 @@
     "rax"
   ],
   "bugs": {
-    "url": "https://github.com/ryan730/rax-map/issues"
+    "url": "https://github.com/alibaba/rax-map/issues"
   },
-  "homepage": "https://ryan730.github.io/rax-map",
+  "homepage": "https://alibaba.github.io/rax-map/",
   "license": "MIT",
   "devDependencies": {
     "antd": "^2.7.4",

@@ -18,7 +18,7 @@ const onSearchKeyDOwn = e => {
   const keyword = target.value.trim();
   if (keyCode === 13) {
     if (keyword !== '') {
-      window.open(`https://www.google.com.hk/search?q=${encodeURIComponent(keyword)}+site:github.com/ryan730/rax-map&oq=$+site:github.com/ryan730/rax-map`);
+      window.open(`https://www.google.com.hk/search?q=${encodeURIComponent(keyword)}+site:github.com/alibaba/rax-map&oq=$+site:github.com/ryan730/rax-map`);
     }
   }
 };
@@ -41,7 +41,7 @@ export default function Header(props) {
         {/*<li><Link to="/"><Icon type="home"/><span>首页</span></Link></li>*/}
         {/*<li><Link className={path.indexOf('articles') === -1 ? '' : 'current'} to="/articles/start"><Icon type="bulb"/><span>快速开始</span></Link></li>*/}
         <li><Link className={path.indexOf('components') === -1 ? '' : 'current'} to="/api/components/index"><Icon type="appstore-o"/><span>组件文档</span></Link></li>
-        <li><a href="https://github.com/ryan730/rax-map" target="_blank"><Icon type="github"/><span>GitHub</span></a></li>
+        <li><a href="https://github.com/alibaba/rax-map" target="_blank"><Icon type="github"/><span>GitHub</span></a></li>
         <li>
           <a target="_blank" href="javascript:;" onClick={shareIt}>
             <Icon type="share-alt"/>

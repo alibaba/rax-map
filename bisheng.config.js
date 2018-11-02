@@ -30,5 +30,5 @@ module.exports = {
     };
     return config;
   },
-  root: '/api/'
+  root: '/rax-map/'
 };
