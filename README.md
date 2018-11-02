@@ -155,4 +155,6 @@ npm install --save rax-map
 
 Rax-map 的成长离不开大家的支持，希望大家通过 Issues 提出宝贵意见。
 
+### 团队
+power by [阿里拍卖前端团队](http://paiui.dockerlab.alipay.net)
 
