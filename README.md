@@ -1,3 +1,5 @@
+<img src="https://ryan730.github.io/rax-map/10b3751062650b8fb9f16b4214dd6726.png" width="150" height="150" />
+
 # Rax-map
 
 
@@ -6,6 +8,12 @@
 - 目前提常用地图组件，能满足大部分简单的业务场景;
 - 同时也提供了组件的扩展能力,自定义组件;
 - 如果你有更复杂的需求，或者觉得默认提供的组件功能不够,可以参考高德api配置,提供更丰富的开发能力;
+
+### 线上API地址(包含demo演示)
+[地址](https://ryan730.github.io/rax-map/rax-map/components/index)
+
+### 项目实践(阿里拍卖-地图找房)
+[地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
 
 ### 背景
 `Rax` 是什么?
