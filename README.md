@@ -13,6 +13,7 @@
 [地址](https://ryan730.github.io/rax-map/rax-map/components/index)
 
 ### 项目实践(阿里拍卖-地图找房)
+- 建议在chrome的移动端模拟模式下查看
 [地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
 
 ### 背景
@@ -28,8 +29,8 @@
 > 可以方便的在我们的 Rax 应用中接入高德地图;
 
 > 用户无需关注地图 API 和地图插件的加载过程，在简单的使用场景下，用户甚至不需要接触高德实例;
-
-如何在项目中接入 Rax-map;
+---
+## 如何在使用`Rax-map`
 
 ### 安装
 ```sh
