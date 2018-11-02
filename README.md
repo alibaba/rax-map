@@ -1,13 +1,13 @@
-<img src="https://github.com/alibaba/rax-map/10b3751062650b8fb9f16b4214dd6726.png" width="150" height="150" />
+<img src="https://img.alicdn.com/tfs/TB1hKleuiQnBKNjSZFmXXcApVXa-700-700.png" width="120" height="120" />
 
 # Rax-map
 
 
-> Rax-map 是一个基于 Rax 封装的高德地图组件;
+> Rax-map 基于 rax 与高德地图，快速开发无线地图类业务需求;
 - 帮助你轻松的接入地图到 Rax 项目中;
 - 目前提常用地图组件，能满足大部分简单的业务场景;
 - 同时也提供了组件的扩展能力,自定义组件;
-- 如果你有更复杂的需求，或者觉得默认提供的组件功能不够,可以参考高德api配置,提供更丰富的开发能力;
+- 如果你有更复杂的需求，或者觉得默认提供的组件功能不够,可以参考[高德](https://lbs.amap.com/api/javascript-api/summary)api配置,提供更丰富的开发能力;
 
 ### 线上API地址(包含demo演示)
 [地址](https://github.com/alibaba/rax-map/components/index)
