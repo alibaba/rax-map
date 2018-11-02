@@ -188,7 +188,7 @@ npm install --save rax-map
 | [Circle](/api/components/circle) | 在地图上显示圆形 |
 | [Tip](/api/components/tip) | 在地图上显示信息窗体 |
 | [DetailSwiper](/api/modules/DetailSwiper) | 在地图上显示marker滑动选择组件 |
-| [CurrentLoction](/api/modules/CurrentLoction) | 在地图上显示定位当前位置组件 |
+| [CurrentLoction](/api/modules/CurrentLocation) | 在地图上显示定位当前位置组件 |
 
 ### 功能
 > 更多功能组件,请[参考](https://alibaba.github.io/rax-map/api/components/index)
