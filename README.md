@@ -15,7 +15,7 @@
 
 ### 项目实践(阿里拍卖-地图找房)
 
-- 建议在chrome的移动端模拟模式下查看
+> 建议在chrome的移动端模拟模式下查看
 
 - [地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
 
