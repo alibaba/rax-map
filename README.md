@@ -10,10 +10,13 @@
 - 如果你有更复杂的需求，或者觉得默认提供的组件功能不够,可以参考[高德](https://lbs.amap.com/api/javascript-api/summary)api配置,提供更丰富的开发能力;
 
 ### 线上API地址(包含demo演示)
-[地址](https://github.com/alibaba/rax-map/components/index)
+
+- [地址](https://alibaba.github.io/rax-map/api/components/index)
 
 ### 项目实践(阿里拍卖-地图找房)
+
 - 建议在chrome的移动端模拟模式下查看
+
 [地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
 
 ### 背景
@@ -26,9 +29,9 @@
 
 - `Rax-map` 的出现基于两个目的:
 
-> 可以方便的在我们的 Rax 应用中接入高德地图;
+ > 可以方便的在我们的 Rax 应用中接入高德地图;
 
-> 用户无需关注地图 API 和地图插件的加载过程，在简单的使用场景下，用户甚至不需要接触高德实例;
+ > 用户无需关注地图 API 和地图插件的加载过程，在简单的使用场景下，用户甚至不需要接触高德实例;
 ---
 ## 如何在使用`Rax-map`
 
@@ -148,6 +151,20 @@ npm install --save rax-map
  render(<App />)
 
 ```
+
+### RAX-MAP 目前已经包含的组件如下：
+
+| 名称 | 说明 |
+|------|------|
+| [Map](/api/components/map) | 显示地图；下面的其他组件,必须作为 `Map` 的子组件使用|
+| [Marker](/api/components/marker) | 在地图上显示单个坐标点 |
+| [Markers](/api/components/markers) | 在地图上显示多个坐标点 |
+| [Polygon](/api/components/polygon) | 在地图上显示多边形 |
+| [Polyline](/api/components/polyline) |在地图上显示折线 |
+| [Circle](/api/components/circle) | 在地图上显示圆形 |
+| [Tip](/api/components/tip) | 在地图上显示信息窗体 |
+| [DetailSwiper](/api/modules/DetailSwiper) | 在地图上显示marker滑动选择组件 |
+| [CurrentLoction](/api/modules/CurrentLoction) | 在地图上显示定位当前位置组件 |
 
 ### 贡献指南
 
