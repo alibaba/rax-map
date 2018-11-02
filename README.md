@@ -29,13 +29,38 @@
 
 - `Rax-map` 的出现基于两个目的:
 
- > 可以方便的在我们的 Rax 应用中接入高德地图;
- 
- > 用户无需关注地图 API 和地图插件的加载过程，在简单的使用场景下，用户甚至不需要接触高德实例;
+ + 可以方便的在我们的 Rax 应用中接入高德地图,用;
+ + 用户无需关注地图 API 和地图插件的加载过程，在简单的使用场景下，用户甚至不需要接触高德实例;
  
 ---
 
 ## 如何在使用`Rax-map`
+
+#### Rax-amap 的使用
+下面是代码，如何创建一个基础map和一个可管理得marker集合，是不是很Rax。
+
+```js
+<Map plugins={['ToolBar', 'Scale']}
+  style={style}
+  events={this.mapEvents}
+  center={this.mapDefaultProps.center}
+  zooms={[8, 19]}// 地图显示的缩放级别范围,在移动设备上，默认为[3,19],取值范围[3-19]
+  <Markers
+         markers={this.state.markers}
+         useCluster={this.state.useCluster}
+         render={this.projMarkers.render}
+         events={this.projMarkers.events}
+         keepLive={true} />
+ </Map>
+```
+
+如果要创建一个普通的map应用，开发者不用查询高德的api,也不用关心包括map的管理，marker的管理，事件的管理等等繁琐的事情。
+比如：如果要增，删，改, 查marker集合，只需要如下操作，只用给this.state.markers赋值一个新的数组.
+
+```js
+this.setState({markers: [...newMarkers]}, cb);
+```
+
 
 ### 安装
 ```sh
