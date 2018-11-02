@@ -17,7 +17,7 @@
 
 - 建议在chrome的移动端模拟模式下查看
 
-[地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
+- [地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
 
 ### 背景
 `Rax` 是什么?
@@ -30,6 +30,7 @@
 - `Rax-map` 的出现基于两个目的:
 
  > 可以方便的在我们的 Rax 应用中接入高德地图;
+ 
  > 用户无需关注地图 API 和地图插件的加载过程，在简单的使用场景下，用户甚至不需要接触高德实例;
  
 ---
@@ -44,10 +45,10 @@ npm install --save rax-map
 ### 基本用法
 
 以下示例展示内容说明:
-> 1.创建一个基本地图[演示地址](https://alibaba.github.io/rax-map/api/components/map/basic)
-> 2.通过控制右边按钮,来改变map的容器尺寸、改变map的中心点、改变map的级别。
-> 3.其中的 Touchable 是 rax 相关的组件,rax 相关用法参见 [rax 开发文档](http://rax.alibaba-inc.com/guide)
-> 4.在下面的例子中需要给 Map 组件传入 `amapkey` 属性，你可以在[高德开放平台](http://lbs.amap.com/faq/account/key/67)申请你自己的Key。
++ 1.创建一个基本地图[演示地址](https://alibaba.github.io/rax-map/api/components/map/basic)
++ 2.通过控制右边按钮,来改变map的容器尺寸、改变map的中心点、改变map的级别。
++ 3.其中的 Touchable 是 rax 相关的组件,rax 相关用法参见 [rax 开发文档](http://rax.alibaba-inc.com/guide)
++ 4.在下面的例子中需要给 Map 组件传入 `amapkey` 属性，你可以在[高德开放平台](http://lbs.amap.com/faq/account/key/67)申请你自己的Key。
 
 ```jsx
  import {Map} from 'rax-map';
@@ -170,6 +171,7 @@ npm install --save rax-map
 ### 贡献指南
 
 > 首先感谢你使用 Rax-map，Rax-map 是一个基于 Rax 封装的高德地图组件库。
+
 > Rax-map 的成长离不开大家的支持，希望大家通过 Issues 提出宝贵意见。
 
 ### 团队
