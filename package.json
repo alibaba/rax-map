@@ -9,7 +9,7 @@
   "scripts": {
     "site": "bisheng build",
     "deploy": "bisheng build && bisheng gh-pages",
-    "build": "rm -rf lib && babel src -d lib",
+    "build": "rm -rf lib && babel api -d lib",
     "start": "bisheng start",
     "dev": "webpack-dev-server --config ./webpack.config.js",
     "push-alibaba":"git push --mirror https://github.com/alibaba/rax-map.git",
