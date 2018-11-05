@@ -28,6 +28,9 @@ module.exports = {
   }, {
     path: '/404',
     component: './template/NotFound'
-  }
+  },//{
+    // path: '/googleSiteVerification',
+    // component: './template/googleSiteVerification'
+    //}
   ]
 };

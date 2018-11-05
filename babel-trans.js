@@ -9,6 +9,8 @@ console.log('文件路径:', filePath);
 
 //调用文件遍历方法
 fileDisplay(filePath);
+//把readme 加入到 api中
+insertReadMe();
 
 /*
 * babel 编译单个文件
@@ -67,7 +69,7 @@ function fileDisplay(filePath) {
               var newPath = filedir.replace('api', 'lib');
               createFolder(newPath);// 创建文件夹
               var newfile = fs.writeFileSync(newPath, code, 'utf8');//
-              console.log('转换完成:',newPath);
+              console.log('转换完成:', newPath);
             }
             if (isDir) {
               fileDisplay(filedir);//递归，如果是文件夹，就继续遍历该文件夹下面的文件
@@ -77,6 +79,22 @@ function fileDisplay(filePath) {
       });
     }
   });
+}
+
+function insertReadMe() {
+  var rd = fs.readFileSync('./README.md', 'utf8');
+  var thx = fs.readFileSync(path.join(__dirname, 'articles/thx.md'), 'utf8');
+  if (rd && thx) {
+    fs.writeFile(path.join(__dirname, 'articles/about.md'), thx + rd, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('success');
+      }
+    })
+  } else {
+    console.log('读取README失败');
+  }
 }
 
 //fs.writeFileSync('/Users/ryan/work/ali/github/rax-map/lib/modules/DetailSwiper/a.js','aaa');

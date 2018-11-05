@@ -16,7 +16,7 @@ export default class Doc extends React.Component {
     if (pageData.demo) {
       type = 'demo';
     }
-    console.log('type1:::', type, props)
+    // console.log('type1:::', type, props)
     return (type === 'demo'
             ? <DemoArticle routeParams={routeParams} pageData={pageData} utils={utils}/>
             : <PureArticle pageData={pageData} utils={utils}/>
