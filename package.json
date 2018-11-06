@@ -1,6 +1,6 @@
 {
   "name": "rax-map",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "rax-map",
   "main": "lib/index.js",
   "files": [
@@ -14,7 +14,7 @@
     "dev": "webpack-dev-server --config ./webpack.config.js",
     "push-alibaba": "git push --mirror https://github.com/alibaba/rax-map.git",
     "cz": "git-cz",
-    "npm-publish": "npm config set registry http://registry.npmjs.org && npm publish"
+    "npm-publish": "npm run build && npm config set registry http://registry.npmjs.org && npm publish"
   },
   "author": "zhu.yan@alibaba-inc.com",
   "repository": {
