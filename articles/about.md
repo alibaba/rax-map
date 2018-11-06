@@ -1,15 +1,8 @@
 ---
-category: Article
-title: 关于
-order: 1
----
-
-### 鸣谢
-
-> 本插件参考和借鉴库和插件，感谢以下优秀的开源资源提供灵感来源,排列不分先后。
-
-> [【高德地图】](https://lbs.amap.com/)[【Rax】](http://rax.alibaba-inc.com/)[【ant】](https://ant.design/index-cn)[【PAIUI】](http://paiui.dockerlab.alipay.net/)[【vue-amap】](https://github.com/ElemeFE/vue-amap)[【react-map】](https://github.com/ElemeFE/react-amap)[【bisheng】](https://github.com/benjycui/bisheng)
-
+      category: Article
+      title: Rax-map 简介
+      order: 1
+    ---
 <img src="https://img.alicdn.com/tfs/TB1hKleuiQnBKNjSZFmXXcApVXa-700-700.png" width="120" height="120" />
 
 # Rax-map
@@ -215,4 +208,10 @@ npm install --save rax-map
 
 ### 团队
 power by [阿里拍卖前端团队](http://paiui.dockerlab.alipay.net)
+
+### 鸣谢
+
+> 本插件参考和借鉴库和插件，感谢以下优秀的开源资源提供灵感来源,排列不分先后。
+
+> [【高德地图】](https://lbs.amap.com/)[【Rax】](http://rax.alibaba-inc.com/)[【ant】](https://ant.design/index-cn)[【PAIUI】](http://paiui.dockerlab.alipay.net/)[【vue-amap】](https://github.com/ElemeFE/vue-amap)[【react-map】](https://github.com/ElemeFE/react-amap)[【bisheng】](https://github.com/benjycui/bisheng)
 

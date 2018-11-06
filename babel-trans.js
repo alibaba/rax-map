@@ -82,10 +82,16 @@ function fileDisplay(filePath) {
 }
 
 function insertReadMe() {
+  var headText =
+    `---
+      \rcategory: Article
+      \rtitle: Rax-map 简介
+      \rorder: 1
+    \r---\n`;
   var rd = fs.readFileSync('./README.md', 'utf8');
   var thx = fs.readFileSync(path.join(__dirname, 'articles/thx.md'), 'utf8');
   if (rd && thx) {
-    fs.writeFile(path.join(__dirname, 'articles/about.md'), thx + rd, (err) => {
+    fs.writeFile(path.join(__dirname, 'articles/about.md'), headText + rd + thx, (err) => {
       if (err) {
         console.log(err);
       } else {
