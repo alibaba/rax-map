@@ -11,7 +11,7 @@ import View from 'rax-view';
 
 import hash from 'object-hash';
 
-import isFun from '../utils/isFun';
+import {isFun} from '../utils/tool';
 import log from '../utils/log';
 import {
   MarkerAllProps,
@@ -162,7 +162,7 @@ class Markers extends PureComponent {
     const mapMarkers = [];
     const markerReactChildDOM = {};
     markers.length && markers.forEach((raw, idx) => {
-      const options = this.buildCreateOptions(props, raw, idx);
+      const options = this.buildMarkersOptions(props, raw, idx);
       options.map = this.map;
       let markerContent = null;
       if (isFun(props.render)) {
@@ -203,8 +203,8 @@ class Markers extends PureComponent {
         this.onMarkerTouchmove(e);
       });
 
-      marker.render = (function (marker) {
-        return function (component) {
+      marker.render = (function(marker) {
+        return function(component) {
           return renderMarkerComponent(component, marker);
         };
       }(marker));
@@ -298,7 +298,7 @@ class Markers extends PureComponent {
   * idx: 索引值
   * MarkerAllProps:amap里的marker 对象的 全部options
   * */
-  buildCreateOptions(props, raw, idx) {
+  buildMarkersOptions(props, raw, idx) {
     const result = {};
     // 强制用户通过 render 函数来定义外观
     // const disabledKeys = ['label', 'icon', 'content'];
@@ -374,7 +374,7 @@ class Markers extends PureComponent {
 
       // keepLive=false,清空所有marker
       // keepCache=[ ] 表示新旧数据对比,没有任何的重复,说明数据彻底做了刷新
-      this.props.useCluster && (this.props.keepLive  = false); // 目前 keeLive 与 useCluster 是互斥关系,不能同时使用;
+      this.props.useCluster && (this.props.keepLive = false); // 目前 keeLive 与 useCluster 是互斥关系,不能同时使用;
 
       /// 如果keepLive=true,只在改变级别时或者远距离改变中心点时,全清数据。
       /// 如果keepLive=false,每次改变 markers 数组就触发。
@@ -383,15 +383,14 @@ class Markers extends PureComponent {
         let clearList = (this.props.useCluster) || (!this.props.useCluster && !this.props.keepLive) ? this.markersCache : this.props.markers;
         window.clearList = clearList;
         clearList.length && clearList.forEach((item) => {
-              let marker = !(item.setMap instanceof Function) ? item.feature : item;
-              if (marker) {
-                setTimeout((mk) => { // 延迟使删除之前 marker 在队列结尾执行
-                  mk.setMap(null);
-                  mk = null;
-                }, 0, marker)
-              }
-            }
-        );
+          let marker = !(item.setMap instanceof Function) ? item.feature : item;
+          if (marker) {
+            setTimeout((mk) => { // 延迟使删除之前 marker 在队列结尾执行
+              mk.setMap(null);
+              mk = null;
+            }, 0, marker);
+          }
+        });
       }
       this.markersCache = defaultOpts.markersCache;// markersCache 归零
       // draw和redraw
@@ -443,7 +442,7 @@ class Markers extends PureComponent {
     const div = document.createElement('div');
     if (childContext && childContext.children[0]) {
       let mStyle = childContext.children[0].style.cssText;
-      mStyle += `padding:0 10px;text-align:center;white-space:nowrap;`;
+      mStyle += 'padding:0 10px;text-align:center;white-space:nowrap;';
       div.style.cssText = mStyle;
       div.innerHTML = `本区域共计有(${context.count})个`;
       context.marker.setContent(div);
@@ -491,7 +490,7 @@ class Markers extends PureComponent {
         events.created(this.mapCluster);
       }
     }
-    ///this.initClusterMarkerWindow();// ryan+,关闭cluser默认展开的事件自定义
+    /// this.initClusterMarkerWindow();// ryan+,关闭cluser默认展开的事件自定义
     /// this.bindClusterEvent(events); // ryan+,关闭cluser默认展开的事件自定义
     return this.mapCluster;
   }

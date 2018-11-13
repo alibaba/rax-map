@@ -1,4 +1,3 @@
-// @flow
 import {createElement, Component, render, Children, PureComponent, cloneElement, unmountComponentAtNode} from 'rax';
 import View from 'rax-view';
 
@@ -29,14 +28,14 @@ class Marker extends PureComponent {
         log.warning('MAP_INSTANCE_REQUIRED');
       } else {
         this.setterMap = {
-          visible:(val)=>{
+          visible: (val) => {
             if (val) {
               this.marker && this.marker.show();
             } else {
               this.marker && this.marker.hide();
             }
           },
-          zIndex:(val)=>{
+          zIndex: (val) => {
             this.marker && this.marker.setzIndex(val);
           }
         };
@@ -68,7 +67,7 @@ class Marker extends PureComponent {
   }
 
   createMarker(props) {
-    const options = this.buildCreateOptions(props);
+    const options = this.buildMarkerOptions(props);
     this.marker = new window.AMap.Marker(options);
 
     this.marker.render = (function(marker) {
@@ -82,7 +81,7 @@ class Marker extends PureComponent {
   }
 
   // 在创建实例时根据传入配置，设置初始化选项
-  buildCreateOptions(props) {
+  buildMarkerOptions(props) {
     let opts = {};
     MarkerAllProps.forEach((key) => {
       if (key in props) {

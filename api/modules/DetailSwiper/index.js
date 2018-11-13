@@ -30,9 +30,9 @@ const itemStyle = {
   border: '1px solid #ccc',
   borderRadius: 20,
   boxShadow: '1px 1px 10px 0 #ccc',
-  fontSize:6,
-  paddingTop:1,
-  paddingBottom:1,
+  fontSize: 6,
+  paddingTop: 1,
+  paddingBottom: 1,
 };
 
 const viewStyle = {
@@ -41,8 +41,8 @@ const viewStyle = {
   width: '100%',
   bottom: 0,
   zIndex: 999,
-  paddingTop:2,
-  paddingBottom:2,
+  paddingTop: 2,
+  paddingBottom: 2,
   justifyContent: 'center'
 };
 
@@ -62,9 +62,9 @@ const arrowStyleL = {
 const arrowStyleR = {
   width: 10,
   height: 10,
-  //position: 'absolute',
+  // position: 'absolute',
   zIndex: 999,
-  //right: 0,
+  // right: 0,
   textAlign: 'center',
   justifyContent: 'center',
   border: '1px solid #ccc',
@@ -80,93 +80,93 @@ const arrowStyle = {
   alignContent: 'center',
   width: '100%',
   justifyContent: 'space-between'
-}
+};
 
 let scope = null;
 
 const DetailSwiper = (props) => {
 
-      const map = props.__map__;
-      const mapStore = props.__ele__;
+  const map = props.__map__;
+  const mapStore = props.__ele__;
 
-      const render = props.render; // 底部 card 的渲染样式
-      const loop = props.loop || true; // card 是否支持轮播
-      const autoPlay = props.autoPlay || false; // 是否支持自动播放
-      const arrowRender = props.arrowRender;// 箭头的渲染样式
-      const animationEndHanler = props.animationEndHanler; // 底部 `card` 每次滑动效果结束触发的事件
+  const render = props.render; // 底部 card 的渲染样式
+  const loop = props.loop || true; // card 是否支持轮播
+  const autoPlay = props.autoPlay || false; // 是否支持自动播放
+  const arrowRender = props.arrowRender;// 箭头的渲染样式
+  const animationEndHanler = props.animationEndHanler; // 底部 `card` 每次滑动效果结束触发的事件
 
-      const currentZoom = map.getZoom();
+  const currentZoom = map.getZoom();
 
       /* markers dom 对象个数 */
-      const getChildrenNum = () => {
-        let $amap_markers = document.querySelectorAll('.amap-marker');
-        return $amap_markers ? $amap_markers.length + 1 : 0;
-      };
+  const getChildrenNum = () => {
+    let $amap_markers = document.querySelectorAll('.amap-marker');
+    return $amap_markers ? $amap_markers.length + 1 : 0;
+  };
 
-      const getChildren = () => {
-        let list = [];
-        if (map) {
-          return map.getAllOverlays('marker');
-        }
-      };
+  const getChildren = () => {
+    let list = [];
+    if (map) {
+      return map.getAllOverlays('marker');
+    }
+  };
 
-      const getScope = (arg) => {
-        scope = arg;
-      };
+  const getScope = (arg) => {
+    scope = arg;
+  };
 
-      const markerGoCenter = () => {
+  const markerGoCenter = () => {
+    setTimeout(() => {
+      const children = getChildren();
+      const index = scope.state.index;
+      const marker = children[index];
+      if (children && marker) {
+        const positon = marker.getPosition();
+        map.setCenter(positon);
+      }
+    }, 0);
+  };
+
+  const arrowHandler = (dir) => {
+    if (dir === 'left') {
+      scope.pre();
+      markerGoCenter();
+    } else {
+      scope.next();
+      markerGoCenter();
+    }
+  };
+
+  if (!map) {
+    console.log('组件必须作为 Map 的子组件使用');
+    return;
+  } else {
+    if (!window.changeSwiperLabel) {
+      window.changeSwiperLabel = () => {
         setTimeout(() => {
+          const mapCenter = map.getCenter();
           const children = getChildren();
-          const index = scope.state.index;
-          const marker = children[index];
-          if (children && marker) {
-            const positon = marker.getPosition();
-            map.setCenter(positon);
+          const index = children.findIndex((item) => {
+            const pos = item.getPosition();
+            return String(pos.lng) === String(mapCenter.lng) && String(pos.lat) === String(mapCenter.lat);
+          });
+          if (scope && index >= 0) {
+            scope.setMyState(index, true);
           }
         }, 0);
       };
-
-      const arrowHandler = (dir) => {
-        if (dir === 'left') {
-          scope.pre();
-          markerGoCenter();
-        } else {
-          scope.next();
-          markerGoCenter();
-        }
-      }
-
-      if (!map) {
-        console.log('组件必须作为 Map 的子组件使用');
-        return;
-      } else {
-        if (!window.changeSwiperLabel) {
-          window.changeSwiperLabel = () => {
-            setTimeout(() => {
-              const mapCenter = map.getCenter();
-              const children = getChildren();
-              const index = children.findIndex((item) => {
-                const pos = item.getPosition();
-                return String(pos.lng) === String(mapCenter.lng) && String(pos.lat) === String(mapCenter.lat);
-              });
-              if (scope && index >= 0) {
-                scope.setMyState(index, true);
-              }
-            }, 0);
-          }
-          map.on('moveend', window.changeSwiperLabel);
-        }
+      map.on('moveend', window.changeSwiperLabel);
+    }
 
         // if(window.AMap){
         //   window.AMap.event.removeListener("moveend");
         //   window.AMap.event.addListenerOnce(map, "moveend", changeSwiperLabel);
         // }
-      }
+  }
 
-      return (
+  return (
           <View style={viewStyle}>
-            <Swiper ref='swiper' autoPlay={autoPlay} loop={loop} width={1} previewWidth={298} getScope={getScope}
-                    animationEndHanler={animationEndHanler}>
+            <Swiper ref="swiper" autoPlay={autoPlay} loop={loop} width={1} previewWidth={298} getScope={getScope}
+              animationEndHanler={animationEndHanler}>
               {
                 getChildren().map((item) => {
                   console.log('ok=>', item.getExtData());
@@ -177,7 +177,7 @@ const DetailSwiper = (props) => {
                             {item.getExtData().cacheIndex}:
                             {item.getExtData().myLabel}
                           </View>
-                  )
+                  );
                 })
               }
             </Swiper>
@@ -186,22 +186,22 @@ const DetailSwiper = (props) => {
                 arrowRender instanceof Function ? arrowRender('left') :
                     <View style={{justifyContent: 'center'}} onClick={arrowHandler.bind(this, 'left')}>
                       <Picture source={{uri: baseImgL}}
-                               style={arrowStyleL}
-                               resizeMode={'cover'}/>
+                        style={arrowStyleL}
+                        resizeMode={'cover'} />
                       </View>
               }
               {
                 arrowRender instanceof Function ? arrowRender('right') :
                     <View style={{justifyContent: 'center'}} onClick={arrowHandler.bind(this, 'left')}>
                       <Picture source={{uri: baseImgR}}
-                               style={arrowStyleR}
-                               resizeMode={'cover'}/>
+                        style={arrowStyleR}
+                        resizeMode={'cover'} />
                     </View>
               }
             </View>
           </View>
-      );
-    }
+  );
+}
 ;
 
 export default DetailSwiper;

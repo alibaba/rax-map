@@ -26,7 +26,7 @@ const styles = {
     background: '#fff',
     padding: 5,
     border: '1px solid #bababa',
-    borderRadius:5
+    borderRadius: 5
   },
   checkZoomSpan: {
     display: 'inline-block',
@@ -38,9 +38,9 @@ const styles = {
     cursor: 'pointer',
     color: '#000000',
     fontSize: '12',
-    whiteSpace:'nowrap'
+    whiteSpace: 'nowrap'
   }
-}
+};
 
 const CheckZoom = (props) => {
   const map = props.__map__;

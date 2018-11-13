@@ -1,5 +1,5 @@
 import {createElement, Component, PureComponent} from 'rax';
-import toCapitalString from './toCapitalString';
+import {toCapitalString} from './tool';
 /**
  * 通过高阶组件创建实例
  * @param MapComponent

@@ -5,7 +5,7 @@ import { toLnglat, toPixel } from './common';
 import {createElement, Component, PureComponent, render, unmountComponentAtNode} from 'rax';
 import View from 'rax-view';
 
-import isFun from './isFun';
+import {isFun} from './tool';
 
 export const MarkerConfigurableProps = [
   'position',

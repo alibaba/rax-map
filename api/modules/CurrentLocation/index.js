@@ -17,7 +17,7 @@ import {
 } from 'rax';
 import View from 'rax-view';
 import Picture from 'rax-picture';
-import isFun from "../../components/utils/isFun";
+import {isFun} from '../../components/utils/tool';
 
 const styles = {
   circleContainer: {
@@ -40,7 +40,7 @@ const styles = {
     width: 56 / 2,
     height: 56 / 2,
   }
-}
+};
 
 /* global AMap */
 const CurrentLocation = (props) => {
@@ -58,7 +58,7 @@ const CurrentLocation = (props) => {
     if (('created' in events) && (typeof events.created === 'function')) {
       events.created(geolocation);
     }
-  }
+  };
 
   const requestGeolocation = (props) => {
     if (geolocation) {
@@ -71,13 +71,13 @@ const CurrentLocation = (props) => {
           const newProps = {
             ...props,
             ...{showButton: false}
-          }
+          };
           geolocation = new window.AMap.Geolocation(newProps);
           resolve(geolocation);
         });
       });
     }
-  }
+  };
 
   const getCurrentGeo = () => {
     const {onGeoComplete, onGeoError} = props;
@@ -91,8 +91,8 @@ const CurrentLocation = (props) => {
           onGeoError(result);
         }
       }
-    })
-  }
+    });
+  };
 
   if (typeof window !== 'undefined') {
     if (!props.__map__) {
@@ -114,7 +114,7 @@ const CurrentLocation = (props) => {
     }
   }>
     <Picture source={{uri: '//gw.alicdn.com/tfs/TB1yPNpG25TBuNjSspmXXaDRVXa-135-138.png'}} style={styles.icon}
-             resizeMode={'cover'}/>
+      resizeMode={'cover'} />
   </View>);
 };
 

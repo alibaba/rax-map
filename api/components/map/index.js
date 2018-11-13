@@ -1,7 +1,7 @@
 import {createElement, Component, Children, PureComponent, cloneElement, unmountComponentAtNode} from 'rax';
 import View from 'rax-view';
 import APILoader from '../utils/APILoader';
-import isFun from '../utils/isFun';
+import {isFun} from '../utils/tool';
 import log from '../utils/log';
 import {toLnglat} from '../utils/common';
 import wrapperGenerator from '../utils/wrapperGenerator';
@@ -23,7 +23,7 @@ const NativeDynamicProps = [
   'center',
   'labelzIndex',
 
-  // 'lang', native error in JSSDK when 3D viewMode
+  //
   'mapStyle',
   'features',
   'cursor',
@@ -31,9 +31,9 @@ const NativeDynamicProps = [
 ];
 
 /*
- * Props below can set by 'setStatus' altogether
+ * setStatus 可以动态修改
  */
-const StatusDynamicProps = [
+const DynamicProps = [
   'animateEnable',
   'doubleClickZoom',
   'dragEnable',
@@ -60,17 +60,7 @@ const StaticProps = [
   'skyColor'
 ];
 
-const CreateProps = NativeDynamicProps.concat(StatusDynamicProps, StaticProps);
-
-// const reservedPropName = [
-//   'amapkey',
-//   'version',
-//   'useAMapUI',
-//   'onInstanceCreated',
-//   'events',
-//   'loading',
-//   'plugins'
-// ]
+const CreateProps = NativeDynamicProps.concat(DynamicProps, StaticProps);
 
 const defaultOpts = {
   MapType: {
@@ -81,29 +71,29 @@ const defaultOpts = {
   ToolBar: {
     position: 'RB', // 控件停靠位置 LT:左上角;RT:右上角;LB:左下角;RB:右下角;默认位置：LT
     noIpLocate: true, // 定位失败后，是否开启IP定位，默认为false
-    locate: true,// 是否显示定位按钮，默认为false
-    liteStyle: true,// 是否使用精简模式，默认为false
+    locate: true, // 是否显示定位按钮，默认为false
+    liteStyle: true, // 是否使用精简模式，默认为false
     autoPosition: false, // 是否自动定位，即地图初始化加载完成后,是否自动定位的用户所在地,仅在支持HTML5的浏览器中有效，默认为false
     direction: true// 方向键盘是否可见，默认为true
   },
   OverView: {},
   ControlBar: {
     position: 'LT',
-    showZoomBar: true,//是否显示缩放按钮。移动端默认为false，PC端为默认为true
+    showZoomBar: true, // 是否显示缩放按钮。移动端默认为false，PC端为默认为true
     showControlButton: true // 是否显示倾斜、旋转按钮。移动端默认为false，PC端为默认为true
   },
   Geolocation: { // 地理定位
-    enableHighAccuracy: true,//是否使用高精度定位，默认:true
-    timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-    maximumAge: 0,           //定位结果缓存0毫秒，默认：0
-    convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
-    showButton: true,        //显示定位按钮，默认：true
-    buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
-    //buttonOffset: new window.AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-    showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
-    showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
-    panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-    zoomToAccuracy: true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+    enableHighAccuracy: true, // 是否使用高精度定位，默认:true
+    timeout: 10000,          // 超过10秒后停止定位，默认：无穷大
+    maximumAge: 0,           // 定位结果缓存0毫秒，默认：0
+    convert: true,           // 自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+    showButton: true,        // 显示定位按钮，默认：true
+    buttonPosition: 'LB',    // 定位按钮停靠位置，默认：'LB'，左下角
+    // buttonOffset: new window.AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+    showMarker: true,        // 定位成功后在定位到的位置显示点标记，默认：true
+    showCircle: true,        // 定位成功后用圆圈表示定位精度范围，默认：true
+    panToLocation: true,     // 定位成功后将定位到的位置作为地图中心点，默认：true
+    zoomToAccuracy: true      // 定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
   }
 };
 
@@ -205,7 +195,7 @@ class BaseMap extends PureComponent {
 
   createInstance() {
     if (!this.map) {
-      const options = this.buildCreateOptions();
+      const options = this.buildMapOptions();
       this.map = new window.AMap.Map(this.mapWrapper, options);
       // install map plugins
       this.setPlugins(this.props);
@@ -213,7 +203,7 @@ class BaseMap extends PureComponent {
     }
   }
 
-  buildCreateOptions() {
+  buildMapOptions() {
     const props = this.props;
     const options = {};
     CreateProps.forEach((key) => {
@@ -228,10 +218,10 @@ class BaseMap extends PureComponent {
     const nextMapStatus = {};
     let statusChangeFlag = false;
     let statusPropExist = false;
-    StatusDynamicProps.forEach((key) => {
+    DynamicProps.forEach((key) => {
       if (key in nextProps) {
         statusPropExist = true;
-        if (this.detectPropChanged(key, prevProps, nextProps)) {
+        if (this.findPropChanged(key, prevProps, nextProps)) {
           statusChangeFlag = true;
           nextMapStatus[key] = nextProps[key];
         }
@@ -239,12 +229,12 @@ class BaseMap extends PureComponent {
     });
     statusChangeFlag && this.map.setStatus(nextMapStatus);
     if (statusPropExist && 'status' in nextProps) {
-      // log.warning(`以下这些属性可以单独提供进行配置，也可以统一作为‘status’属性配置；但是请不要同时使用这两种方式。\n（${StatusDynamicProps.join(', ')}）`);
+      log.warning(`单独提供进行配置和‘status’属性配置，不支持同时使用。\n（${DynamicProps.join(', ')}）`);
     }
     StaticProps.forEach((key) => {
       if (key in nextProps) {
-        if (this.detectPropChanged(key, prevProps, nextProps)) {
-          // log.warning(`'${key}' 是一个静态属性，地图实例创建成功后无法修改`);
+        if (this.findPropChanged(key, prevProps, nextProps)) {
+          log.warning(`'${key}' 是一个静态属性，地图实例创建成功后无法修改`);
         }
       }
     });
@@ -258,8 +248,44 @@ class BaseMap extends PureComponent {
     return props[key];
   }
 
-  detectPropChanged(key, prevProps, nextProps) {
+  findPropChanged(key, prevProps, nextProps) {
     return prevProps[key] !== nextProps[key];
+  }
+
+  installPlugin(name, opts) {
+    opts = opts || {};
+    switch (name) {
+      case 'Scale':
+      case 'ToolBar':
+      case 'OverView':
+      case 'MapType':
+        this.setMapPlugin(name, opts);
+        break;
+      case 'ControlBar':
+        this.setControlBar(opts);
+        break;
+      case 'Geolocation':
+        this.setGeolocationPlugin(name, opts);
+        break;
+      default:
+        // do nothing
+    }
+  }
+
+  uninstallPlugins(plugins) {
+    if (plugins && plugins.length) {
+      plugins.forEach((p) => {
+        if (p in this.pluginMap) {
+          // ControlBar has no 'hide' method
+          if (p === 'ControlBar') {
+            this.map.removeControl(this.pluginMap[p]);
+            delete this.pluginMap[p];
+          } else {
+            this.pluginMap[p].hide();
+          }
+        }
+      });
+    }
   }
 
   setPlugins(props) {
@@ -281,7 +307,7 @@ class BaseMap extends PureComponent {
           }
           const idx = pluginList.indexOf(name);
           if (idx === -1) {
-            log.warning(`没有 ‘${name}’ 这个插件，请检查是否拼写错误`);
+            log.warning(`没有 ‘${name}’ 这个插件，请检查配置`);
           } else {
             if (visible) {
               pluginList.splice(idx, 1);
@@ -291,43 +317,7 @@ class BaseMap extends PureComponent {
         });
       }
     }
-    this.removeOrDisablePlugins(pluginList);
-  }
-
-  removeOrDisablePlugins(plugins) {
-    if (plugins && plugins.length) {
-      plugins.forEach((p) => {
-        if (p in this.pluginMap) {
-          // ControlBar has no 'hide' method
-          if (p === 'ControlBar') {
-            this.map.removeControl(this.pluginMap[p]);
-            delete this.pluginMap[p];
-          } else {
-            this.pluginMap[p].hide();
-          }
-        }
-      });
-    }
-  }
-
-  installPlugin(name, opts) {
-    opts = opts || {};
-    switch (name) {
-      case 'Scale':
-      case 'ToolBar':
-      case 'OverView':
-      case 'MapType':
-        this.setMapPlugin(name, opts);
-        break;
-      case 'ControlBar':
-        this.setControlBar(opts);
-        break;
-      case 'Geolocation':
-        this.setGeolocationPlugin(name, opts);
-        break;
-      default:
-        // do nothing
-    }
+    this.uninstallPlugins(pluginList);
   }
 
   /*
@@ -351,7 +341,7 @@ class BaseMap extends PureComponent {
           onCreated(this.pluginMap.Geolocation);
           cb(this.pluginMap.Geolocation);
         }
-        //添加成功与否验证
+        // 添加成功与否验证
         this.pluginMap.Geolocation.getCurrentPosition((status, result) => {
           if (status == 'complete') {
             if (isFun(onGeoComplete)) {
@@ -362,7 +352,7 @@ class BaseMap extends PureComponent {
               onGeoError(result);
             }
           }
-        })
+        });
       });
     }
   }
@@ -412,7 +402,7 @@ class BaseMap extends PureComponent {
 
   render() {
     const {loading} = this.props;
-    const loadingRender = (loading.render instanceof Function) ? loading.render : () => null
+    const loadingRender = (loading.render instanceof Function) ? loading.render : () => null;
     return (
         <View ref={'mapContainer'} style={wrapperStyle}>
           <div ref={(div) => {
