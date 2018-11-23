@@ -18,9 +18,9 @@ Markers 组件在创建高德坐标点时，属性的设定非常灵活。
 
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 
 const randomMarker = (len) => (
   Array(len).fill(true).map((e, idx) => ({
@@ -65,5 +65,5 @@ class App extends PureComponent{
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

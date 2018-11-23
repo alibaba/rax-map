@@ -11,9 +11,9 @@ title: 动态更改属性
 
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
 class App extends PureComponent {

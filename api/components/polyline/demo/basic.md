@@ -5,9 +5,9 @@ order: 1
 
 本例演示了如何创建一个折线以及动态改变折线的属性
 
-```jsx 
+```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers,Polyline} from 'rax-map';
-import {PureComponent, render} from 'rax';
 import View from 'rax-view';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
@@ -108,5 +108,5 @@ class App extends PureComponent{
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

@@ -53,9 +53,9 @@ order: 6
 
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import $ from 'jquery';
 
 const pickerBox={
@@ -183,6 +183,6 @@ const MyApp = (<View style={{width: '100%', height: '100%'}}>
 render(
   MyApp,
   mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 
 ```

@@ -17,9 +17,9 @@ title: 绑定事件
 > 2.如果你有更高级的需求，我们还定义了`created`事件。
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import Text from 'rax-text';
 
 class App extends PureComponent{
@@ -74,5 +74,5 @@ class App extends PureComponent{
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

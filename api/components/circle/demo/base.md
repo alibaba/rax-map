@@ -6,8 +6,8 @@ order: 1
 这个例子演示如何创建一个圆形，并且动态改变属性；
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Circle} from 'rax-map';
-import {PureComponent, render} from 'rax';
 import View from 'rax-view';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
@@ -134,5 +134,5 @@ class App extends PureComponent{
 render(
   <App/>,
   mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

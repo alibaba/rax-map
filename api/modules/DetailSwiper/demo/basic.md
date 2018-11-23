@@ -10,9 +10,9 @@ order: 1
     - 相反,如果点击 `marker` 事件,同样也可以切换下面的标签 `card`,做到 `marker` 和 `card` 同步联动。
 
 ```jsx 
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers,Polyline} from 'rax-map';
 import {DetailSwiper} from 'rax-map';
-import {PureComponent, render} from 'rax';
 import View from 'rax-view';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
@@ -127,5 +127,5 @@ class App extends PureComponent{
   }
 }
 
-render(<App/>, mountNode);
+render(<App/>, mountNode); //实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

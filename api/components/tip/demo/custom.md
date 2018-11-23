@@ -10,9 +10,9 @@ Rax-map 提供两种方式定义信息窗体的内容：
 **如果同时设置了 content 属性且有 children，children 将被忽略**
 
 
-```jsx 
+```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Tip} from 'rax-map';
-import {PureComponent, render} from 'rax';
 import View from 'rax-view';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
@@ -148,5 +148,5 @@ class App extends PureComponent{
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

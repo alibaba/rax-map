@@ -12,9 +12,9 @@ Markers 组件的事件绑定方式与 Marker 类似，都是定义 events 属�
 > 1.尝试点击例子中的坐标点，以及弹窗中的坐标点，在控制台查看输出。
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import Text from 'rax-text';
 
 const randomMarker = (len) => (
@@ -70,5 +70,5 @@ class App extends PureComponent {
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

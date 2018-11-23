@@ -18,9 +18,9 @@ marker的外观定义方法之一
 
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
 class App extends PureComponent{
@@ -119,5 +119,5 @@ class App extends PureComponent{
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

@@ -14,9 +14,9 @@ order: 2
 
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import Text from 'rax-text';
 
 
@@ -51,5 +51,5 @@ class App extends PureComponent{
 render(
   <App/>,
   mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

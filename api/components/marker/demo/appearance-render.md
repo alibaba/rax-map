@@ -19,9 +19,10 @@ marker的外观定义方法之一,使用 `render` 属性和 `render` 方法来�
 > 4.`extData` 属性,绑定数据传入 `render` 的内容。
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
+
 
 let flag=false; // 设置一个控制改变样式的变量
 

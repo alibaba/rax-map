@@ -30,9 +30,9 @@ order: 4
 > 1.通过控制右侧按钮,来改变map的动态属性。
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 import Touchable from 'rax-touchable'; //  导入touch 容器
 
 const dynamicPorps = ['animateEnable', 'doubleClickZoom', 'dragEnable', 'isHotspot', 'jogEnable', 'keyboardEnable', 'resizeEnable', 'rotateEnable', 'scrollWheel', 'touchZoom', 'zoomEnable']
@@ -117,7 +117,7 @@ render(){
 render(
 <App/>,
 mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 
 
 

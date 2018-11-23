@@ -20,9 +20,9 @@ order: 5
 
 
 ```jsx
+import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers} from 'rax-map';
 import View from 'rax-view';
-import {PureComponent, render} from 'rax';
 
 const alphabet = 'ABCDEFGHIJKLMNOP'.split('');
 
@@ -93,6 +93,6 @@ const style = {
 
 render(
   <App/>, mountNode
-)
+); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```
 
