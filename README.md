@@ -78,9 +78,9 @@ npm install --save rax-map
 + 4.在下面的例子中需要给 Map 组件传入 `amapkey` 属性，你可以在[高德开放平台](http://lbs.amap.com/faq/account/key/67)申请你自己的Key;
 
 ```jsx
+ import {createElement,PureComponent, render} from 'rax';
  import {Map} from 'rax-map';
  import View from 'rax-view';
- import {PureComponent, render} from 'rax';
  import Touchable from 'rax-touchable'; //  导入touch 容器
 
  const amapkey = '...';// 这个是高德地图给开发者分配的开发者 Key
