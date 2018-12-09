@@ -1,58 +1,24 @@
-import Map from './components/map';
-import Marker from './components/marker';
-import Markers from './components/markers';
-import Polyline from './components/polyline';
-import Polygon from './components/polygon';
-import Circle from './components/circle';
-import Tip from './components/tip';
+/**
+ * Created with WebStorm.
+ * User: 一晟
+ * Date: 2018/12/9
+ * Time: 下午10:45
+ * email: zhu.yan@alibaba-inc.com
+ * To change this template use File | Settings | File Templates.
+ */
+// https://www.w3.org/TR/html5/webappapis.html#dom-navigator-appcodename
+const isWeb = typeof navigator === 'object' && (navigator.appCodeName === 'Mozilla' || navigator.product === 'Gecko');
+const isNode = typeof process !== 'undefined' && !!(process.versions && process.versions.node);
+const isWeex = typeof callNative === 'function' || typeof WXEnvironment === 'object' && WXEnvironment.platform !== 'Web';
+const isReactNative = typeof __fbBatchedBridgeConfig !== 'undefined';
 
-import checkZoom from './modules/checkZoom';
-import DetailSwiper from './modules/DetailSwiper';
-import CurrentLocation from './modules/CurrentLocation';
-import mapServices from './modules/utils/mapServices';
+function acquire() {
+  if (!isWeex && !isNode && !isReactNative) {
+    return require('./interface');
+    //return require('./unInterface');
+  } else {
+    return require('./unInterface');
+  }
+}
 
-// import Circle from './circle';
-// import Polygon from './polygon';
-
-// import GroundImage from './groundimage';
-// import CircleEditor from './circleeditor';
-// import PolyEditor from './polyeditor';
-// import MouseTool from './mousetool';
-
-export {
-  Map,
-  Marker,
-  Markers,
-  Polyline,
-  Polygon,
-  Circle,
-  Tip,
-  // CircleEditor,
-  // PolyEditor,
-  // InfoWindow,
-  // GroundImage,
-  // MouseTool
-  checkZoom,
-  CurrentLocation,
-  mapServices,
-  DetailSwiper
-};
-
-export default {
-  Map,
-  Marker,
-  Markers,
-  Circle,
-  // CircleEditor,
-  Polyline,
-  Polygon,
-  Tip,
-  // PolyEditor,
-  // InfoWindow,
-  // GroundImage,
-  // MouseTool
-  checkZoom,
-  CurrentLocation,
-  mapServices,
-  DetailSwiper
-};
+module.exports = acquire();
