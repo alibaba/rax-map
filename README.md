@@ -204,3 +204,9 @@ npm install --save rax-map
 ### 团队
 power by [阿里拍卖前端团队](http://paiui.dockerlab.alipay.net)
 
+### 更新日志
++ 2018.12.10
+ - 去除 rax-map/api/modules/DetailSwiper 里对 rax-pictrue 的依赖，改为 View 显示字符箭头
+ - 增加对rax native 渲染的提示，
+ 🚧 目前 'RAX-MAP' 不支持 'Weex native 渲染方式'
+ 🔌 只支持 'h5-webView方式'，请调整 URL 参数为 'wh_weex=false' 的降级模式。
