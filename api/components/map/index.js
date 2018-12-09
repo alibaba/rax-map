@@ -325,7 +325,7 @@ class BaseMap extends PureComponent {
   * */
   setGeolocationPlugin(name, opts, cb) {
     if (this.pluginMap.Geolocation) {
-      cb(this.pluginMap.Geolocation);
+      cb && cb(this.pluginMap.Geolocation);
     } else {
       const {onCreated, onGeoComplete, onGeoError, ...restOpts} = opts;
       const initOpts = {...defaultOpts.Geolocation, ...restOpts};
@@ -339,7 +339,7 @@ class BaseMap extends PureComponent {
         this.map.addControl(this.pluginMap.Geolocation);
         if (isFun(onCreated)) {
           onCreated(this.pluginMap.Geolocation);
-          cb(this.pluginMap.Geolocation);
+          cb && cb(this.pluginMap.Geolocation);
         }
         // 添加成功与否验证
         this.pluginMap.Geolocation.getCurrentPosition((status, result) => {
@@ -385,7 +385,7 @@ class BaseMap extends PureComponent {
 * */
   setControlBar(opts, cb) {
     if (this.pluginMap.ControlBar) {
-      cb(this.pluginMap.ControlBar);
+      cb && cb(this.pluginMap.ControlBar);
     } else {
       const {onCreated, ...restOpts} = opts;
       const initOpts = {...defaultOpts.ControlBar, ...restOpts};
@@ -394,7 +394,7 @@ class BaseMap extends PureComponent {
         this.map.addControl(this.pluginMap.ControlBar);
         if (isFun(onCreated)) {
           onCreated(this.pluginMap.ControlBar);
-          cb(this.pluginMap.ControlBar);
+          cb && cb(this.pluginMap.ControlBar);
         }
       });
     }
