@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 // import React,{Component} from 'react'
-import {PureComponent, render} from 'rax';
+import {createElement, PureComponent, render} from 'rax';
 import View from 'rax-view';
 
 import * as styles from './style';
