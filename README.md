@@ -210,3 +210,6 @@ power by [阿里拍卖前端团队](http://paiui.dockerlab.alipay.net)
   - 增加对rax native 渲染的提示，
  🚧 目前 'RAX-MAP' 不支持 'Weex native 渲染方式'
  🔌 只支持 'h5-webView方式'，请调整 URL 参数为 'wh_weex=false' 的降级模式。
+ 
+ + 2018.12.19（版本0.0.11)
+ 修复一个swiper组件会提示缺少`createElemet`的bug,
