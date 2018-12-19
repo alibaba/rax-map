@@ -1,6 +1,6 @@
 {
   "name": "rax-map",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "rax-map",
   "main": "lib/index.js",
   "files": [
