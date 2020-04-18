@@ -15,7 +15,7 @@ const isReactNative = typeof __fbBatchedBridgeConfig !== 'undefined';
 function acquire() {
   if (!isWeex && !isNode && !isReactNative) {
     return require('./interface');
-    //return require('./unInterface');
+    // return require('./unInterface');
   } else {
     return require('./unInterface');
   }

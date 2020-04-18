@@ -336,19 +336,19 @@ class Markers extends PureComponent {
     let same = [];
     let diff = [];
     diff = newCache.filter(
-        (key) => {
-          let hasHash = oldCache.find((marker) => {
-            // let extData = marker.getExtData();
-            // if (extData && extData.createdHash === key.createdHash) {//是否已经在cache中
-            let extData = marker.createdHash;
-            if (extData && extData === key.createdHash) {// 是否已经在cache中
-              same.push(key);
-              return filterFun ? filterFun() : true;// 如果有,调用过滤函数
-            }
-            return false;
-          });
-          return !hasHash;
+      (key) => {
+        let hasHash = oldCache.find((marker) => {
+          // let extData = marker.getExtData();
+          // if (extData && extData.createdHash === key.createdHash) {//是否已经在cache中
+          let extData = marker.createdHash;
+          if (extData && extData === key.createdHash) {// 是否已经在cache中
+            same.push(key);
+            return filterFun ? filterFun() : true;// 如果有,调用过滤函数
+          }
+          return false;
         });
+        return !hasHash;
+      });
     if (!oldCache.length) {
       same = newCache;
     }

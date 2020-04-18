@@ -7,11 +7,12 @@
     "lib"
   ],
   "scripts": {
+    "lint": "eslint . --quiet --fix",
     "site": "rm -rf _site && bisheng build && cp ./_theme/static/google04711c37f558a72c.html ./_site/google04711c37f558a72c.html",
     "deploy": "bisheng build && bisheng gh-pages",
     "build": "rm -rf lib && node babel-trans.js",
     "start": "bisheng start",
-    "dev": "webpack-dev-server --config ./webpack.config.js",
+    "dev": "webpack-dev-server",
     "push-alibaba": "git push --mirror https://github.com/alibaba/rax-map.git",
     "cz": "git-cz",
     "npm-publish": "npm run build && npm config set registry http://registry.npmjs.org && npm publish"
@@ -32,6 +33,7 @@
   "homepage": "https://alibaba.github.io/rax-map/",
   "license": "MIT",
   "devDependencies": {
+    "@ali/eslint-plugin-tbfed": "^1.1.7",
     "antd": "^2.7.4",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -45,12 +47,14 @@
     "bisheng": "0.13.3",
     "bisheng-plugin-antd": "0.3.2",
     "bisheng-plugin-react": "0.2.2",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.26.1",
     "cz-conventional-changelog": "^2.1.0",
     "dora-plugin-proxy": "^0.8.5",
-    "eslint": "^3.17.1",
+    "eslint": ">=4.18.2",
     "eslint-config-elemefe": "^0.2.0",
     "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-react": "^6.10.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.10.0",
@@ -63,22 +67,22 @@
     "style-loader": "^0.13.1",
     "uglify-js": "^2.8.12",
     "url-loader": "^0.5.7",
-    "webpack": "^3.4.1",
-    "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-dev-server": "^2.6.1",
-    "copy-webpack-plugin": "^4.6.0"
+    "webpack": "^4.x.x",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-dev-server": ">=3.1.11"
   },
   "dependencies": {
-    "object-hash": "^1.3.1 ",
+    "@ali/eslint-config-tbfed": "^0.6.11",
     "classnames": "^2.2.6",
+    "object-hash": "^1.3.1 ",
     "prop-types": "^15.6.2",
     "rax": "^0.6.5",
-    "rax-view": "^0.6.5",
-    "rax-picture": "^0.6.6",
     "rax-button": "^0.6.5",
+    "rax-picture": "^0.6.6",
     "rax-recyclerview": "^0.6.5",
     "rax-text": "^0.6.5",
-    "rax-touchable": "^0.6.5"
+    "rax-touchable": "^0.6.5",
+    "rax-view": "^0.6.5"
   },
   "config": {
     "commitizen": {

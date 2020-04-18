@@ -16,13 +16,13 @@ import cn from 'classnames';
 
 class Swiper extends PureComponent {
   static propTypes = {
-    index: PropTypes.number,  // 初始值
+    index: PropTypes.number, // 初始值
     duration: PropTypes.number, // 动画完成周期
-    distance: PropTypes.number,  // 触发的距离
-    loop: PropTypes.bool,  // 是否循环播放
+    distance: PropTypes.number, // 触发的距离
+    loop: PropTypes.bool, // 是否循环播放
     width: PropTypes.number, // 0~1,1表示100%
     autoPlay: PropTypes.bool, // 是否自动播放
-    interval: PropTypes.number,  // 轮播间隔秒数
+    interval: PropTypes.number, // 轮播间隔秒数
     type: PropTypes.string, // 轮播类型 default 默认   card 卡片轮播
     pagination: PropTypes.bool// 是否显示分页
   };
@@ -328,12 +328,12 @@ class Swiper extends PureComponent {
     }
 
     return (
-        <div className="swiper-container" style={styles.swiper_container} ref="swiper"
-          onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
-          <div className="swiper-wrapper" style={wrapper_style}>
-            {sliderDom}
-          </div>
-          {this.props.pagination &&
+      <div className="swiper-container" style={styles.swiper_container} ref="swiper"
+        onTouchStart={this.handleTouchStart} onTouchMove={this.handleTouchMove} onTouchEnd={this.handleTouchEnd}>
+        <div className="swiper-wrapper" style={wrapper_style}>
+          {sliderDom}
+        </div>
+        {this.props.pagination &&
           <div className="swiper-pagination" style={styles.swiper_pagination}>
             {(() => {
               let list = [];
@@ -345,9 +345,9 @@ class Swiper extends PureComponent {
               return list;
             })()}
           </div> || ''
-          }
+        }
 
-        </div>
+      </div>
     );
 
   }
