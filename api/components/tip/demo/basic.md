@@ -9,7 +9,7 @@ order: 1
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers,Tip} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 const randomMarker = (len) => (
   Array(len).fill(true).map((e, idx) => ({

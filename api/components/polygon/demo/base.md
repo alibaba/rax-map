@@ -8,7 +8,7 @@ order: 1
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers,Polygon} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 const randomPath = () => ({
    longitude: 100 + Math.random() * 50,
@@ -62,13 +62,13 @@ class App extends PureComponent{
         </Map>
 
         <View style={rowStyle}>
-          <Touchable style={touchStyle} onPress={this.toggleVisible.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.toggleVisible.bind(this)}>
                点我 : 隐藏显示
           </Touchable>
-           <Touchable style={touchStyle} onPress={this.toggleDraggable.bind(this)}>
+           <Touchable style={touchStyle} onClick={this.toggleDraggable.bind(this)}>
                点我 : 是否支持拖拽
            </Touchable>
-           <Touchable style={touchStyle} onPress={this.randomPath.bind(this)}>
+           <Touchable style={touchStyle} onClick={this.randomPath.bind(this)}>
                点我 : 改变节点位置
            </Touchable>
         </View>

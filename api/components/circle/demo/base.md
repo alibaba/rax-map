@@ -9,7 +9,8 @@ order: 1
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Circle} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+
+const Touchable = View;
 
 const randomIndex = (len) => (Math.floor(Math.random() * len));
 const randomColor = () => {
@@ -86,19 +87,19 @@ class App extends PureComponent{
       </View>
 
       <View style={rowStyle}>
-        <Touchable style={touchStyle} onPress={this.toggleVisible.bind(this)}>
+        <Touchable style={touchStyle} onClick={this.toggleVisible.bind(this)}>
              点我 : 隐藏显示
         </Touchable>
-         <Touchable style={touchStyle} onPress={this.toggleDraggable.bind(this)}>
+         <Touchable style={touchStyle} onClick={this.toggleDraggable.bind(this)}>
              点我 : 是否支持拖拽
          </Touchable>
-         <Touchable style={touchStyle} onPress={this.changeCenter.bind(this)}>
+         <Touchable style={touchStyle} onClick={this.changeCenter.bind(this)}>
              点我 : 改变中心位置
          </Touchable>
-         <Touchable style={touchStyle} onPress={this.changeRadius.bind(this)}>
+         <Touchable style={touchStyle} onClick={this.changeRadius.bind(this)}>
              点我 : 改变半径
          </Touchable>
-         <Touchable style={touchStyle} onPress={this.changeStyle.bind(this)}>
+         <Touchable style={touchStyle} onClick={this.changeStyle.bind(this)}>
              点我 : 改变样式
          </Touchable>
       </View>

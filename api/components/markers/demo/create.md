@@ -13,7 +13,7 @@ order: 1
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Markers} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 const randomPosition = () => ({
   longitude: 100 + Math.random() * 20,
@@ -50,7 +50,7 @@ class App extends PureComponent{
         </Map>
       </View>
       <View style={rowStyle}>
-          <Touchable style={touchStyle} onPress={this.randomMarkers.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.randomMarkers.bind(this)}>
                 点击:刷新多个 Markers
           </Touchable>
       </View>

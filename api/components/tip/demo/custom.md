@@ -14,7 +14,7 @@ Rax-map 提供两种方式定义信息窗体的内容：
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Tip} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 class App extends PureComponent{
   constructor() {
@@ -102,19 +102,19 @@ class App extends PureComponent{
         </Map>
       </View>
       <View style={rowStyle}>
-          <Touchable style={touchStyle} onPress={this.showTip.bind(this,1)}>
+          <Touchable style={touchStyle} onClick={this.showTip.bind(this,1)}>
               点我 : 普通tip
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.showTip.bind(this,2)}>
+          <Touchable style={touchStyle} onClick={this.showTip.bind(this,2)}>
               点我 : 通过content属性,自定义html样式的tip
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.showTip.bind(this,3)}>
+          <Touchable style={touchStyle} onClick={this.showTip.bind(this,3)}>
               点我 : 通过内部biaoq,定义html样式的tip
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.showTip.bind(this,4)}>
+          <Touchable style={touchStyle} onClick={this.showTip.bind(this,4)}>
               点我 : 非自定义html样式的tip
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.changeCount.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.changeCount.bind(this)}>
               点我 : 改变tip内的state
           </Touchable>
       </View>

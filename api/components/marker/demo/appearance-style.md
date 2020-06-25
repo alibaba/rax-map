@@ -21,7 +21,7 @@ marker的外观定义方法之一
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 class App extends PureComponent{
   constructor() {
@@ -61,7 +61,7 @@ class App extends PureComponent{
         </Map>
       </View>
       <View style={rowStyle}>
-          <Touchable style={touchStyle} onPress={this.toggle.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.toggle.bind(this)}>
                点我 : 改变markerB的样式和内容
           </Touchable>
       </View>

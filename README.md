@@ -80,7 +80,8 @@ npm install --save rax-map
  import {createElement,PureComponent, render} from 'rax';
  import {Map} from 'rax-map';
  import View from 'rax-view';
- import Touchable from 'rax-touchable'; //  导入touch 容器
+
+const Touchable = View;
 
  const amapkey = '...';// 这个是高德地图给开发者分配的开发者 Key
 
@@ -134,13 +135,13 @@ npm install --save rax-map
            />
          </View>
          <View style={rowStyle}>
-            <Touchable style={touchStyle} onPress={this.changeMapSize.bind(this)}>
+            <Touchable style={touchStyle} onClick={this.changeMapSize.bind(this)}>
                  点我 : 改变map的容器尺寸
             </Touchable>
-             <Touchable style={touchStyle} onPress={this.changeCenter.bind(this)}>
+             <Touchable style={touchStyle} onClick={this.changeCenter.bind(this)}>
                  点我 : 改变map的中心点
              </Touchable>
-             <Touchable style={touchStyle} onPress={this.changeZoom.bind(this)}>
+             <Touchable style={touchStyle} onClick={this.changeZoom.bind(this)}>
                  点我 : 改变map的级别
              </Touchable>
          </View>

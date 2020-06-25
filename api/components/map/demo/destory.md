@@ -14,7 +14,7 @@ order: 7
  import {createElement, PureComponent, render} from 'rax';
  import {Map} from 'rax-map';
  import View from 'rax-view';
- import Touchable from 'rax-touchable'; //  导入touch 容器
+ const Touchable = View;
 
 class App extends PureComponent{
   constructor(props) {
@@ -38,7 +38,7 @@ class App extends PureComponent{
       <View style={{width: '100%', height: '100%'}}>
         { this.state.display ? <Map/> : null }
       </View>
-       <Touchable style={touchStyle} onPress={this.toggle.bind(this)}>
+       <Touchable style={touchStyle} onClick={this.toggle.bind(this)}>
            {this.state.display?'销毁地图':'重建地图'}
        </Touchable>
     </View>

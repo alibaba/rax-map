@@ -14,7 +14,7 @@ title: 动态更改属性
 import {createElement, PureComponent, render} from 'rax';
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 class App extends PureComponent {
   constructor(){
@@ -74,16 +74,16 @@ class App extends PureComponent {
         </Map>
       </View>
       <View style={rowStyle}>
-          <Touchable style={touchStyle} onPress={this.toggleVisible.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.toggleVisible.bind(this)}>
              {`visible(显示):${this.state.visible}`}
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.randomPosition.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.randomPosition.bind(this)}>
              {`randomPosition(随机位置):${JSON.stringify(this.state.position)}`}
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.toggleClickable.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.toggleClickable.bind(this)}>
              {`clickable(是否可点):${this.state.clickable}`}
           </Touchable>
-          <Touchable style={touchStyle} onPress={this.toggleDraggable.bind(this)}>
+          <Touchable style={touchStyle} onClick={this.toggleDraggable.bind(this)}>
             {`draggable(是否可拖拽):${this.state.draggable}`}
           </Touchable>
       </View>

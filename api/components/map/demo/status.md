@@ -33,7 +33,7 @@ order: 4
 import {createElement, PureComponent, render} from 'rax';
 import {Map} from 'rax-map';
 import View from 'rax-view';
-import Touchable from 'rax-touchable'; //  导入touch 容器
+const Touchable = View;
 
 const dynamicPorps = ['animateEnable', 'doubleClickZoom', 'dragEnable', 'isHotspot', 'jogEnable', 'keyboardEnable', 'resizeEnable', 'rotateEnable', 'scrollWheel', 'touchZoom', 'zoomEnable']
 
@@ -80,7 +80,7 @@ render(){
    </View>
    <View style={rowStyle}>
        {dynamicPorps.map((item,index)=>{
-            return <Touchable key={index} style={touchStyle} onPress={this.changeHandler.bind(this,item)}>
+            return <Touchable key={index} style={touchStyle} onClick={this.changeHandler.bind(this,item)}>
                       {mapInstance?`${item}:${Boolean(this.state.status[item])}`:null}
                    </Touchable>
        })}

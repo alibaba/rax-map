@@ -19,7 +19,8 @@ Map 可以通过setState 改变所有动态属性；
  import {createElement, PureComponent, render} from 'rax';
  import {Map} from 'rax-map';
  import View from 'rax-view';
- import Touchable from 'rax-touchable'; //  导入touch 容器
+ 
+const Touchable = View;
 
  class App extends PureComponent{
 
@@ -71,13 +72,13 @@ Map 可以通过setState 改变所有动态属性；
            />
          </View>
          <View style={rowStyle}>
-            <Touchable style={touchStyle} onPress={this.changeMapSize.bind(this)}>
+            <Touchable style={touchStyle} onClick={this.changeMapSize.bind(this)}>
                  点我 : 改变map的容器尺寸
             </Touchable>
-             <Touchable style={touchStyle} onPress={this.changeCenter.bind(this)}>
+             <Touchable style={touchStyle} onClick={this.changeCenter.bind(this)}>
                  点我 : 改变map的中心点
              </Touchable>
-             <Touchable style={touchStyle} onPress={this.changeZoom.bind(this)}>
+             <Touchable style={touchStyle} onClick={this.changeZoom.bind(this)}>
                  点我 : 改变map的级别
              </Touchable>
          </View>
