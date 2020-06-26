@@ -8,7 +8,7 @@
  */
 /* global AMap */
 import {
-  createElement,useRef,createRef,forwardRef,useImperativeHandle
+  createElement, useRef, createRef, forwardRef, useImperativeHandle
 } from 'rax';
 
 import cloneElement from 'rax-clone-element';
@@ -29,8 +29,8 @@ const itemStyle = {
   paddingTop: 1,
   paddingBottom: 1,
   // pointerEvents: 'none',
-  webkitUserSelect:'none',
-  userSelect:'none'
+  webkitUserSelect: 'none',
+  userSelect: 'none'
 };
 
 const viewStyle = {
@@ -57,8 +57,8 @@ const arrowStyleL = {
   backgroundColor: 'white',
   boxShadow: '1px 1px 10px 0 #ccc',
   marginLeft: 10,
-  webkitUserSelect:'none',
-  userSelect:'none'
+  webkitUserSelect: 'none',
+  userSelect: 'none'
 };
 
 const arrowStyleR = {
@@ -73,8 +73,8 @@ const arrowStyleR = {
   backgroundColor: 'white',
   boxShadow: '1px 1px 10px 0 #ccc',
   marginRight: 10,
-  webkitUserSelect:'none',
-  userSelect:'none'
+  webkitUserSelect: 'none',
+  userSelect: 'none'
 };
 
 const arrowStyle = {
@@ -85,14 +85,14 @@ const arrowStyle = {
   justifyContent: 'space-between'
 };
 
-const itemContainer ={
+const itemContainer = {
   justifyContent: 'center',
   flexDirection: 'row'
-}
+};
 
 let scope = null;
 
-const DetailSwiper = (props,ref) => {
+const DetailSwiper = (props, ref) => {
   let currentIndex = 0;
   const sliderRef = createRef(null);
 
@@ -145,22 +145,22 @@ const DetailSwiper = (props,ref) => {
   const arrowHandler = (dir) => {
     if (dir === 'left') {
       currentIndex--;
-      if(currentIndex <0) currentIndex = getChildren().length-1;
+      if (currentIndex < 0) currentIndex = getChildren().length - 1;
       //scope.pre();
     } else {
       //scope.next();
       currentIndex++;
-      if(currentIndex >=getChildren().length) currentIndex = 0;
+      if (currentIndex >= getChildren().length) currentIndex = 0;
     }
     //console.log('handlerChange======',dir,currentIndex,getChildren().length);
     slideTo(currentIndex);
     markerGoCenter(currentIndex);
   };
 
-  const handlerChange = ({index}) =>{
+  const handlerChange = ({index}) => {
     currentIndex = index;
-    animationEndHanler(index)
-  }
+    animationEndHanler(index);
+  };
 
   if (!map) {
     console.log('组件必须作为 Map 的子组件使用');

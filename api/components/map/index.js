@@ -1,4 +1,4 @@
-import {createElement, Component,  PureComponent, unmountComponentAtNode} from 'rax';
+import {createElement, Component, PureComponent, unmountComponentAtNode} from 'rax';
 import cloneElement from 'rax-clone-element';
 import Children from 'rax-children';
 import View from 'rax-view';

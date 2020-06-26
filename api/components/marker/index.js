@@ -1,6 +1,6 @@
 import {createElement, Component, render, PureComponent, unmountComponentAtNode} from 'rax';
 import cloneElement from 'rax-clone-element';
-import DriverUniversal from "driver-universal";
+import DriverUniversal from 'driver-universal';
 import Children from 'rax-children';
 import View from 'rax-view';
 
