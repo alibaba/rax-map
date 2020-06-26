@@ -175,7 +175,7 @@ const Touchable = View;
     right:-70
   }
 
- render(<App />, document.body, { driver: DriverUniversal });)
+render(<App />, document.body, { driver: DriverUniversal });
 
 ```
 
