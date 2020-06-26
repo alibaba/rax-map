@@ -78,6 +78,7 @@ npm install --save rax-map
 
 ```jsx
  import {createElement,PureComponent, render} from 'rax';
+ import DriverUniversal from "driver-universal";
  import {Map} from 'rax-map';
  import View from 'rax-view';
 

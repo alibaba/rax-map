@@ -6,7 +6,9 @@
  * email: zhu.yan@alibaba-inc.com
  * To change this template use File | Settings | File Templates.
  */
-import {createElement, Component, render, Children, PureComponent, cloneElement, unmountComponentAtNode} from 'rax';
+import {createElement, Component, render, PureComponent, unmountComponentAtNode} from 'rax';
+import cloneElement from 'rax-clone-element';
+import Children from 'rax-children';
 import View from 'rax-view';
 
 import hash from 'object-hash';

@@ -1,8 +1,12 @@
 ---
-      category: Article
-      title: Rax-map 简介
-      order: 1
-    ---
+      
+category: Article
+      
+title: Rax-map 简介
+      
+order: 1
+    
+---
 <img src="https://img.alicdn.com/tfs/TB1hKleuiQnBKNjSZFmXXcApVXa-700-700.png" width="120" height="120" />
 
 # Rax-map
@@ -83,6 +87,7 @@ npm install --save rax-map
 
 ```jsx
  import {createElement,PureComponent, render} from 'rax';
+ import DriverUniversal from "driver-universal";
  import {Map} from 'rax-map';
  import View from 'rax-view';
 

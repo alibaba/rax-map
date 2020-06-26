@@ -1,4 +1,6 @@
-import {createElement, Component, render, Children, PureComponent, cloneElement, unmountComponentAtNode} from 'rax';
+import {createElement, Component, render, PureComponent, unmountComponentAtNode} from 'rax';
+import cloneElement from 'rax-clone-element';
+import Children from 'rax-children';
 import View from 'rax-view';
 import wrapperGenerator from '../utils/wrapperGenerator';
 import log from '../utils/log';

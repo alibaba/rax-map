@@ -18,6 +18,7 @@ title: 绑定事件
 
 ```jsx
 import {createElement, PureComponent, render} from 'rax';
+import DriverUniversal from "driver-universal";
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
 import Text from 'rax-text';
@@ -72,7 +73,5 @@ class App extends PureComponent{
   }
 }
 
-render(
-  <App/>, mountNode
-); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
+render(<App />,mountNode,{ driver: DriverUniversal }); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

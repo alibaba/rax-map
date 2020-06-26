@@ -54,6 +54,7 @@ order: 6
 
 ```jsx
 import {createElement, PureComponent, render} from 'rax';
+import DriverUniversal from "driver-universal";
 import {Map} from 'rax-map';
 import View from 'rax-view';
 import $ from 'jquery';
@@ -180,9 +181,7 @@ const MyApp = (<View style={{width: '100%', height: '100%'}}>
       </View>
       </View>);
 
-render(
-  MyApp,
-  mountNode
-); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
+render(MyApp,mountNode,{ driver: DriverUniversal });
+// 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 
 ```

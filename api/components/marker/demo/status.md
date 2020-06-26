@@ -116,7 +116,5 @@ class App extends PureComponent {
     top:-20
   }
 
-render(
-  <App/>, mountNode
-)
+render(<App />,mountNode,{ driver: DriverUniversal }); 
 ```

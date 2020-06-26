@@ -20,6 +20,7 @@ marker的外观定义方法之一,使用 `render` 属性和 `render` 方法来�
 
 ```jsx
 import {createElement, PureComponent, render} from 'rax';
+import DriverUniversal from "driver-universal";
 import {Map,Marker} from 'rax-map';
 import View from 'rax-view';
 
@@ -83,7 +84,5 @@ const styleB = {
   padding: '6px',
 }
 
-render(
-  <App/>, mountNode
-)
+render(<App />,mountNode,{ driver: DriverUniversal }); 
 ```

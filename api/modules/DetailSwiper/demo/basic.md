@@ -10,7 +10,8 @@ order: 1
     - 相反,如果点击 `marker` 事件,同样也可以切换下面的标签 `card`,做到 `marker` 和 `card` 同步联动。
 
 ```jsx 
-import {createElement, PureComponent, render} from 'rax';
+import {createElement, PureComponent, render, createRef} from 'rax';
+import DriverUniversal from "driver-universal";
 import {Map,Markers,Polyline} from 'rax-map';
 import {DetailSwiper} from 'rax-map';
 import View from 'rax-view';
@@ -70,6 +71,7 @@ const mouseoverStyle = {
 class App extends PureComponent{
   constructor(){
     super();
+    this.detailSwiperRef = createRef(null);
     this.markers = randomMarker(10);
     this.mapCenter = {longitude: 115, latitude: 40};
     this.state = {
@@ -86,9 +88,10 @@ class App extends PureComponent{
     }
     this.markerEvents = {
       click:(e)=>{
-        console.log('markers click事件!',e,e.target.getPosition());
         const marker = e.target;
+        console.log('markers click事件!',marker);
         marker.getMap().setCenter(marker.getPosition());
+        this.detailSwiperRef.current && this.detailSwiperRef.current.slideTo(marker);
       }
     }
   }
@@ -108,7 +111,7 @@ class App extends PureComponent{
     return <View style={{width: '100%', height: '100%'}}>
       <View style={{width: '100%', height: '100%'}}>
         <Map plugins={['ToolBar']} center={this.mapCenter} zoom={4} events={this.mapEvents}>
-          <DetailSwiper animationEndHanler={(e)=>{
+          <DetailSwiper ref={this.detailSwiperRef} animationEndHanler={(e)=>{
              console.log('swiper结束:',e)
           }}/>
           <Markers
@@ -127,5 +130,5 @@ class App extends PureComponent{
   }
 }
 
-render(<App/>, mountNode); //实际开发中, mountNode不用传，这里是为了放入示例dom中;
+render(<App />,mountNode,{ driver: DriverUniversal });  //实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

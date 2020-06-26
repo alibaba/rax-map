@@ -16,14 +16,14 @@ Map 可以通过setState 改变所有动态属性；
 
 
 ```jsx
- import {createElement, PureComponent, render} from 'rax';
- import DriverUniversal from "driver-universal";
- import {Map} from 'rax-map';
- import View from 'rax-view';
+import {createElement, Component, render, PureComponent} from 'rax';
+import DriverUniversal from "driver-universal";
+import {Map} from 'rax-map';
+import View from 'rax-view';
  
 const Touchable = View;
 
- class App extends PureComponent{
+ class App extends Component{
 
    // 初始化参数
    constructor(){
@@ -111,6 +111,8 @@ const Touchable = View;
     justifyContent:'space-between',
     right:-70
   }
+
+
 
  render(<App />,mountNode,{ driver: DriverUniversal }); //实际开发中, mountNode不用传，这里是为了放入示例dom中
 

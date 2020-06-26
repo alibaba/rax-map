@@ -6,24 +6,27 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 module.exports = {
-  source: ['./api', './articles', 'CHANGELOG.md'],
+  source: ['./api', './articles', 'CHANGELOG.md'],//引入的md文件路径
   output: './_site',
   entry: {
     index: {
       theme: './_theme',
-      htmlTemplate: './_theme/static/template.html'
+      htmlTemplate: './_theme/static/template.html'//页面模板
     }
   },
   plugins: [
     'bisheng-plugin-react?lang=__react',
     'bisheng-plugin-antd'
   ],
-  port: 9001,
+  port: 9001,//服务启动的端口号
   webpackConfig(config) {
     // config.externals = {
     //   'React': 'react'
     // },
     //config.plugins = [
+    //   new webpack.DefinePlugin({
+    //     "process.env.NODE_ENV" : (JSON.stringify(process.env.NODE_ENV+'_aaaaa'))
+    //  })
       //new BundleAnalyzerPlugin()
       // new HtmlWebpackPlugin({
       //   filename:'google04711c37f558a72c.html', //通过模板生成的文件名

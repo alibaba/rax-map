@@ -11,7 +11,7 @@ function isExternalLink(link) {
 
 function handleContentClick(e) {
   const target = e.target;
-  if (target.nodeName.toLowerCase() === 'a') {
+  if (target && target.nodeName && target.nodeName.toLowerCase() === 'a') {
     const url = target.getAttribute('href');
     if (isExternalLink(url)) {
       window.open(url, '_blank');

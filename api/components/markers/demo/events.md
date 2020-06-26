@@ -13,6 +13,7 @@ Markers 组件的事件绑定方式与 Marker 类似，都是定义 events 属�
 
 ```jsx
 import {createElement, PureComponent, render} from 'rax';
+import DriverUniversal from "driver-universal";
 import {Map,Markers} from 'rax-map';
 import View from 'rax-view';
 import Text from 'rax-text';
@@ -68,7 +69,5 @@ class App extends PureComponent {
   }
 }
 
-render(
-  <App/>, mountNode
-); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
+render(<App />,mountNode,{ driver: DriverUniversal }); // 实际开发中, mountNode不用传，这里是为了放入示例dom中;
 ```

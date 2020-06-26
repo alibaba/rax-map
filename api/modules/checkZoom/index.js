@@ -8,14 +8,9 @@
  */
 /* global AMap */
 import {
-  createElement,
-  Component,
-  Children,
-  PureComponent,
-  findDOMNode,
-  cloneElement,
-  unmountComponentAtNode
+  createElement
 } from 'rax';
+
 import View from 'rax-view';
 
 const styles = {

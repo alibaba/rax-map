@@ -12,9 +12,10 @@ import {
   Children,
   PureComponent,
   findDOMNode,
-  cloneElement,
   unmountComponentAtNode
 } from 'rax';
+
+import cloneElement from 'rax-clone-element';
 import View from 'rax-view';
 import Picture from 'rax-picture';
 import {isFun} from '../../components/utils/tool';

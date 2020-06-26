@@ -11,6 +11,7 @@ order: 1
 
 ```jsx
 import {createElement, PureComponent, render} from 'rax';
+import DriverUniversal from "driver-universal";
 import {Map,Markers} from 'rax-map';
 import View from 'rax-view';
 const Touchable = View;
@@ -83,5 +84,5 @@ class App extends PureComponent{
     top:-20
   }
 
-render(<App/>, mountNode); //实际开发中, mountNode不用传，这里是为了放入示例dom中
+render(<App />,mountNode,{ driver: DriverUniversal }); //实际开发中, mountNode不用传，这里是为了放入示例dom中
 ```

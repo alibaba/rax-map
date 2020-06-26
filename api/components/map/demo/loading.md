@@ -15,6 +15,7 @@ Map 组件现在还支持配置 loading 属性，在地图加载完成之前渲�
 
 ```jsx
 import {createElement, PureComponent, render} from 'rax';
+import DriverUniversal from "driver-universal";
 import View from 'rax-view';
 import Text from 'rax-text';
 import {Map} from 'rax-map';
@@ -71,7 +72,7 @@ class App extends PureComponent{
   }
 }
 
-render(<App />,mountNode); //实际开发中, mountNode不用传，这里是为了放入示例dom中;
+render(<App />,mountNode,{ driver: DriverUniversal });  //实际开发中, mountNode不用传，这里是为了放入示例dom中;
 
 
 ```
