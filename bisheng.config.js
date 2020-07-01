@@ -19,6 +19,23 @@ module.exports = {
     'bisheng-plugin-antd'
   ],
   port: 9001,//服务启动的端口号
+  /**
+   * bisheng 对 config 的属性部分支持
+   * 如果在npm run site后,有执行错误可以用以下方法:
+   * 可以参考 nodemodules 里的配置,设置 build -> webpackConfig.UglifyJsPluginConfig 里的属性
+   sourceMap:true,
+    output: {
+      //ascii_only: true
+      beautify:true
+    },
+    // compress: {
+    //   warnings: false
+    // }
+    compress:false,
+    mangle:false
+  };
+  webpackConfig.devtool='source-map'; // 也可以添加sourceMap
+   */
   webpackConfig(config) {
     // config.externals = {
     //   'React': 'react'

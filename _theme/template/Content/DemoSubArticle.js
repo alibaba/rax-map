@@ -44,8 +44,10 @@ export default class DemoSubArticle extends React.Component {
       if(!window.mountNode)return;
       window.React = require('rax');
       window.ReactDOM = require('rax-view');
+      window.DriverUniversal = require('driver-universal');
       window.aaa = item;
-      process.env.NODE_ENV = 'production';
+      window.process = process || {};
+      window.process.env.NODE_ENV = 'production';// rax1.0 对 process.env.NODE_ENV 有权限限制
       item.preview(); // run md 的 code 的关键命令
       console.log('DemoSubArticle = @preview::setTimeout@');
     },500))&&console.log('delay mountNode!',item)

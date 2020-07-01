@@ -1,3 +1,6 @@
+/**
+ * build: 增加了构建lib的独立方法,babel-trans.js,不与bisheng冲突
+ */
 var fs = require('fs');
 var path = require('path');
 var babel = require('babel-core');

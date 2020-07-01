@@ -1,12 +1,8 @@
 ---
-      
-category: Article
-      
-title: Rax-map 简介
-      
-order: 1
-    
----
+      category: Article
+      title: Rax-map 简介
+      order: 1
+    ---
 <img src="https://img.alicdn.com/tfs/TB1hKleuiQnBKNjSZFmXXcApVXa-700-700.png" width="120" height="120" />
 
 # Rax-map
@@ -223,6 +219,13 @@ power by [阿里拍卖前端团队](http://paiui.dockerlab.alipay.net)
  
  + 2018.12.19（版本0.0.11)
    - 修复一个swiper组件会提示缺少`createElemet`的bug,
+
+ + 2020.6.27（版本next@0.0.1)
+   - 里程碑式更新,全面升级到支持rax1.x.x版本。
+   - 文档，demo 全面升级, 能正常运行。
+   - rax-map/api/modules/DetailSwiper 里的swiper 换成 rax 官方的 rax-slider。
+   - 持续迭代中,这个分支运行正常后, 会以master@0.1.0版本合并。
+   - 准备后续支持画圈找房。
 ### 鸣谢
 
 > 本插件参考和借鉴库和插件，感谢以下优秀的开源资源提供灵感来源,排列不分先后。

@@ -1,6 +1,6 @@
 {
   "name": "rax-map",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "rax-map",
   "main": "lib/index.js",
   "files": [
@@ -8,14 +8,15 @@
   ],
   "scripts": {
     "lint": "eslint . --quiet --fix",
-    "site": "rm -rf _site && bisheng build && cp ./_theme/static/google04711c37f558a72c.html ./_site/google04711c37f558a72c.html",
+    "site": "rm -rf lib && node babel-trans.js && rm -rf _site && bisheng build && cp ./_theme/static/google04711c37f558a72c.html ./_site/google04711c37f558a72c.html",
     "deploy": "bisheng build && bisheng gh-pages",
     "build": "rm -rf lib && node babel-trans.js",
     "start": "bisheng start",
     "dev": "webpack-dev-server",
     "push-alibaba": "git push --mirror https://github.com/alibaba/rax-map.git",
     "cz": "git-cz",
-    "npm-publish": "npm run build && npm config set registry http://registry.npmjs.org && npm publish"
+    "npm-publish": "npm run build && npm config set registry http://registry.npmjs.org && npm publish",
+    "obs": "cd ./_site && python -m SimpleHTTPServer 80 && open http://127.0.0.1"
   },
   "author": "zhu.yan@alibaba-inc.com",
   "repository": {
