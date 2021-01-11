@@ -20,6 +20,12 @@
 
 - [地址](https://market.m.taobao.com/app/pmMap/pages/index?wh_weex=false&spm=a2129.1122572.search.2)
 
+### 项目在 淘系 “天马模块” 中的应用实例
+
+> 在天马模块中的应用demo
+
+https://github.com/ryan730/rax-map-example
+
 ### 背景
 `Rax` 是什么?
 - `Rax` 是一个全新的思路。它是一个通用的跨容器的渲染引擎， 如果你使用过 `React` ， 那么你就已经知道了该如何使用 `Rax` ， 因为它们的 API 是完全兼容的。`Rax` 的诞生，主要还是为阿里巴巴广泛的业务来服务的。现在，我们让它走向开源，服务更多的开发者。
