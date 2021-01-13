@@ -3,7 +3,7 @@ title: AMapUI 组件库
 order: 6
 ---
 
-现在 Rax-map 的 Map 组件中，你可以指定 `useAMapUI` 属性为 true,这样可以加载 [AMapUI 组件库](http://lbs.amap.com/api/javascript-api/guide/amap-ui/intro)。
+现在 Rax-map 的 Map 组件中，你可以指定 `useAMapUI` 属性为 true,这样可以加载 [AMapUI 组件库](https://lbs.amap.com/api/amap-ui/intro)。
 
 使用参考[示例](https://lbs.amap.com/api/amap-ui/demos/amap-ui-simplemarker/custom-icon)。
 
